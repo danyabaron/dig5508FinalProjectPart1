@@ -40,7 +40,9 @@ function setup() {
     let r = random(sun.radius, dist(0, 0, width / 2, height / 2));
     let theta = random(TWO_PI);
     let planetPos = createVector(r*cos(theta), r*sin(theta));
-
+    console.log(planetPos)
+    console.log(r)
+    console.log(theta)
     //planet velocityß
     // let planetVel = planetPos.copy();
     // planetVel.rotate(HALF_PI);
