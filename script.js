@@ -54,7 +54,7 @@ function setup() {
 
     angleMode(DEGREES);
     createCanvas(600, 600);
-    randomSeed(220);
+    randomSeed(22);
 
     orbits.push(new Orbit(width / 2, height / 2, 160));
     orbits.push(new Orbit(width / 2, height / 2, 230));
