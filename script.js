@@ -105,7 +105,7 @@ function draw()
      for (let j = 0; j < bigStars.length; j++) {
         bigStars[j].display();
     } 
-      console.log("display big star")
+      // console.log("display big star")
 
     push();
     translate(width/2, height/2);
