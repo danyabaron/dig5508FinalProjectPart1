@@ -28,7 +28,7 @@ function setup() {
     let theta = random(TWO_PI);
     let planetPos = createVector(r*cos(theta), r*sin(theta));
 
-    planet1 = new Planet(25, planetPos, createVector(4,2), 'red');
+    planet1 = new Planet(25, planetPos, cLreateVector(4,2), 'red');
 
 
     
