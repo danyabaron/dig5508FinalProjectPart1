@@ -3,6 +3,10 @@ let smallStars = [];
 let angleRotate = 3;
 let bigStars = [];
 let sun, planet1;
+let planets = [];
+// let orbit1, orbit2, orbit3, orbit4, orbit5, orbit6;
+let orbits = [];
+let G = 50;
 
 
 
@@ -10,6 +14,15 @@ let sun, planet1;
 function setup() {
     angleMode(DEGREES);
     createCanvas(600, 600);
+
+    randomSeed(42);
+
+    orbits.push(new Orbit(width / 2, height / 2, 160));
+    orbits.push(new Orbit(width / 2, height / 2, 230));
+    orbits.push(new Orbit(width / 2, height / 2, 300));
+    orbits.push(new Orbit(width/2, height/2, 370));
+    orbits.push(new Orbit(width / 2, height / 2, 450));
+    orbits.push(new Orbit(width/2, height/2, 540));
 
     for (let i = 0; i < 90; i++) {
         smallStars.push(new SmallStar());
@@ -24,11 +37,46 @@ function setup() {
 
     sun = new Planet(100, createVector(0,0), createVector(0,0), 'yellow');
 
-    let r = random(sun.radius, ((windowWidth/2), (windowHeight/2)));
+    let r = random(sun.radius, dist(0, 0, width / 2, height / 2));
     let theta = random(TWO_PI);
     let planetPos = createVector(r*cos(theta), r*sin(theta));
 
-    planet1 = new Planet(25, planetPos, createVector(4,2), 'red');
+    //planet velocityß
+    // let planetVel = planetPos.copy();
+    // planetVel.rotate(HALF_PI);
+    // planetVel.setMag(sqrt(G*sun.mass/planetPos.mag()));
+
+    let planetVel = createVector(-planetPos.y, planetPos.x);
+    planetVel.setMag(sqrt(G * sun.mass / r));
+
+    planet1 = new Planet(25, planetPos, planetVel, 'red');
+
+
+    angleMode(DEGREES);
+    createCanvas(600, 600);
+    randomSeed(42);
+
+    orbits.push(new Orbit(width / 2, height / 2, 160));
+    orbits.push(new Orbit(width / 2, height / 2, 230));
+    orbits.push(new Orbit(width / 2, height / 2, 300));
+    orbits.push(new Orbit(width / 2, height / 2, 370));
+    orbits.push(new Orbit(width / 2, height / 2, 450));
+    orbits.push(new Orbit(width / 2, height / 2, 540));
+
+    for (let i = 0; i < 3; i++) {
+        // Create planets with random sizes and positions
+        let mass = random(10, 50);
+        let r = random(mass * 2, dist(0, 0, width / 2, height / 2) - 50);
+        let theta = random(TWO_PI);
+        let planetPos = createVector(r * cos(theta), r * sin(theta));
+
+        // Calculate the initial velocity for the planet
+        let planetVel = createVector(-planetPos.y, planetPos.x);
+        planetVel.setMag(sqrt(G * mass / r));
+
+        // Create the planet with the calculated position, velocity, mass, and color
+        planets.push(new Planet(mass, planetPos, planetVel, color(random(255), random(255), random(255))));
+    }
 
 
     
@@ -44,17 +92,11 @@ function draw()
     noStroke();
     frameRate(40);
 
-    orbit1 = new Orbit(width/2, height/2, 160);
-    orbit1.display();
-
-    orbit2 = new Orbit(width/2, height/2, 200);
-    orbit2.display();
-
-    orbit3 = new Orbit(width/2, height/2, 300);
-    orbit3.display();
-
-    orbit4 = new Orbit(width/2, height/2, 450);
-    orbit4.display();
+    for (let i = 0; i < orbits.length; i++) {
+        orbits[i].display();
+    }
+    
+    
 
     for (let i = 0; i < smallStars.length; i++) {
         smallStars[i].display();
@@ -67,10 +109,14 @@ function draw()
 
     push();
     translate(width/2, height/2);
-
-    sun.display();
-    planet1.display();
+    sun.attract(planet1);
     planet1.updatePos();
+
+    planet1.display();
+    // planet1.applyForce(sun);
+    sun.display();
+    
+   
     pop();
 
 }
@@ -149,6 +195,30 @@ class Planet {
 
         this.pos.x += this.vel.x;
         this.pos.y += this.vel.y;
+
+    }
+
+
+    // acceleration affecting velocity
+    applyForce(f) {
+        // if force = ma => a = f/m
+
+        this.vel.x += f.x / this.mass;
+        this.vel.y += f.y / this.mass;
+
+    }
+
+    //newtons law of gravitational pull
+    attract(child) {
+
+        //distance between sun and planet
+        let r = dist(this.pos.x, this.pos.y, child.pos.x, 
+            child.pos.y);
+        // creating vector that points from child to sun
+        let f = this.pos.copy().sub(child.pos);
+        // set magnitutde of force
+        f.setMag((G * this.mass * child.mass) / (r*r));
+        child.applyForce(f);
 
     }
 }
