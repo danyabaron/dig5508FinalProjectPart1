@@ -26,8 +26,7 @@ function setup() {
 
     for (let i = 0; i < 90; i++) {
         smallStars.push(new SmallStar());
-
-  }
+    }
 
     for (let j = 0; j < 30; j++) {
         bigStars.push(new BigStar());
