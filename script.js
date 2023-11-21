@@ -11,22 +11,26 @@ function setup() {
 
     
 
-
     for (let i = 0; i < 90; i++) {
         smallStars.push(new SmallStar());
 
-    }
+  }
 
     for (let j = 0; j < 30; j++) {
         bigStars.push(new BigStar());
     }
 
     mercury = new Planet(20, 120, 2, 30, color('#626f96'));
-    venus = new Planet(30, 175, 0.4, 100, color('#de6840'));
+    venus = new Planet(30, 175, 0.4, 100, color('#de684'));
+
+    
+
 
 }
 
-function draw() {
+
+function draw() 
+{
 
     background('black');
     noStroke();
@@ -94,11 +98,6 @@ class Planet {
     }
 
 }
-
-
-
-
-
 
 
 
