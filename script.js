@@ -21,7 +21,7 @@ function setup() {
     }
 
     mercury = new Planet(20, 120, 2, 30, color('#626f96'));
-    venus = new Planet(30, 175, 0.4, 100, color('#de684'));
+    venus = new Planet(30, 175, 0.4, 100, color('#de6840'));
 
     
 
