@@ -7,7 +7,7 @@ let mercury, venus, earth, mars, jupiter, saturn;
 
 function setup() {
     angleMode(DEGREES);
-    createCanvas(600, 600);
+    createCanvas(1200, 1200);
 
     
 
@@ -22,8 +22,10 @@ function setup() {
 
     mercury = new Planet(20, 120, 2, 30, color('#626f96'));
     venus = new Planet(30, 175, 0.4, 100, color('#de6840'));
-
-    
+    earth = new Planet(20, 230, 0.6, 190, color('green'));
+    mars = new Planet(30, 280, 1, 230, color(('red')));
+    jupiter = new Planet(50, 340, 0.3, 60, color('#7e79a3'));
+    saturn = new Planet(50, 450, 0.1, 120, color('gray'));
 
 
 }
@@ -53,6 +55,18 @@ function draw()
 
     venus.update();
     venus.display();
+
+    earth.update();
+    earth.display();
+
+    mars.update();
+    mars.display();
+
+    jupiter.update();
+    jupiter.display();
+
+    saturn.update();
+    saturn.display();
 
 }
 
@@ -107,8 +121,8 @@ class Planet {
 
 class SmallStar {
     constructor() {
-        this.x = random(windowWidth);
-        this.y = random(windowHeight);
+        this.x = random(width);
+        this.y = random(height);
         this.size = random(1,3);
         this.color = "white";
     }
@@ -122,8 +136,8 @@ class SmallStar {
 
 class BigStar {
     constructor() {
-        this.x = random(windowWidth);
-        this.y = random(windowHeight);
+        this.x = random(width);
+        this.y = random(height);
         this.size = random(7,9);
         this.color = "white";
     }
