@@ -21,8 +21,8 @@ function setup() {
         bigStars.push(new BigStar());
     }
 
-    mercury = new Planet(20, 120, 0.4, color('#626f96'));
-    venus = new Planet(40, 160, 0.4, color('#de6840'));
+    mercury = new Planet(20, 120, 2, 30, color('#626f96'));
+    venus = new Planet(30, 175, 0.4, 100, color('#de6840'));
 
 }
 
@@ -54,10 +54,10 @@ function draw() {
 
 
 class Planet {
-    constructor(radius, orbitRadius, orbitSpeed, color) {
+    constructor(radius, orbitRadius, orbitSpeed, startingPos, color) {
         this.radius = radius;
         this.orbitRadius = orbitRadius;
-        this.angle = random(TWO_PI);
+        this.angle = startingPos;
         this.orbitSpeed = orbitSpeed;
         this.color = color;
 
