@@ -68,6 +68,16 @@ function draw()
     saturn.update();
     saturn.display();
 
+
+    //notes for danya
+    // make a class that takes in Planet and 
+    //tracks its position through a value or method
+    //have user pause the animation and after it is paused
+    // check to see if planets are in certain positions
+    // unsure how i'm going to calculate these positions
+    // maybe w frame count?
+    
+
 }
 
 
@@ -112,6 +122,9 @@ class Planet {
     }
 
 }
+
+
+
 
 
 
