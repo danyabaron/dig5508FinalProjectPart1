@@ -126,7 +126,7 @@ function keyPressed() {
 
 
         // Calculate the angular separation between Mercury and Venus
-        let angleDifference = abs(mercury.angle - venus.angle);
+        let angleDifference = Math.round(abs(mercury.angle - venus.angle));
         console.log(angleDifference);
 
         // Use a tolerance value to account for small variations due to floating-point precision
