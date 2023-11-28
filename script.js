@@ -103,7 +103,25 @@ function keyPressed() {
     if (keyCode === ENTER) {
         isPaused = !isPaused;
 
+        if (mercury.update() && venus.update() == 0) {
+            console.log("conjunction");
+        }
 
+        if(mercury.update() && venus.update() == 60) {
+            console.log("sextile");
+        }
+
+        if (mercury.update() && venus.update() == 90) {
+            console.log('square');
+        }
+
+        if (mercury.update() && venus.update() == 120) {
+            console.log("trine");
+        }
+
+        if (mercury.update() && venus.update() == 180) {
+            console.log("opposition");
+        }
 
 
     }
