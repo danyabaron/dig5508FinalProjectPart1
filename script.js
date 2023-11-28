@@ -103,23 +103,23 @@ function keyPressed() {
     if (keyCode === ENTER) {
         isPaused = !isPaused;
 
-        if (mercury.update() && venus.update() == 0) {
+        if (mercury.angle && venus.angle == 0) {
             console.log("conjunction");
         }
 
-        if(mercury.update() && venus.update() == 60) {
+        if(mercury.angle && venus.angle == 60) {
             console.log("sextile");
         }
 
-        if (mercury.update() && venus.update() == 90) {
+        if (mercury.angle && venus.angle == 90) {
             console.log('square');
         }
 
-        if (mercury.update() && venus.update() == 120) {
+        if (mercury.angle && venus.angle == 120) {
             console.log("trine");
         }
 
-        if (mercury.update() && venus.update() == 180) {
+        if (mercury.angle && venus.angle == 180) {
             console.log("opposition");
         }
 
@@ -129,10 +129,10 @@ function keyPressed() {
 
 
 class Planet {
-    constructor(radius, orbitRadius, orbitSpeed, startingPos, color) {
+    constructor(radius, orbitRadius, orbitSpeed, angle, color) {
         this.radius = radius;
         this.orbitRadius = orbitRadius;
-        this.angle = startingPos;
+        this.angle = angle;
         this.orbitSpeed = orbitSpeed;
         this.color = color;
 
@@ -142,8 +142,15 @@ class Planet {
     // update planet position
     update() {
         this.angle += this.orbitSpeed;
-        console.log(this.angle);
+        
         // console.log(this.angle += this.orbitSpeed);
+
+         // Reset angle when it reaches or exceeds 360 degrees
+         if (this.angle >= 360) {
+            this.angle = 0;
+        }
+
+        console.log(this.angle);
 
     }
 
