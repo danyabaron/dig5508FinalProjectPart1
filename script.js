@@ -103,34 +103,39 @@ function keyPressed() {
     if (keyCode === ENTER) {
         isPaused = !isPaused;
 
-        // if (mercury.angle && venus.angle == 0) {
-        //     console.log("conjunction");
-        // }
-
-        // if(mercury.angle && venus.angle == 60) {
-        //     console.log("sextile");
-        // }
-
-
-        // if (mercury.angle && venus.angle == 90) {
-        //     console.log('square');
-        // }
-
-        // if (mercury.angle && venus.angle == 120) {
-        //     console.log("trine");
-        // }
-
-        // if (mercury.angle && venus.angle == 180) {
-        //     console.log("opposition");
-        // }
+        
 
 
         // Calculate the angular separation between Mercury and Venus
-        let angleDifference = Math.round(abs(mercury.angle - venus.angle));
-        console.log(angleDifference);
+        let mvAngleDifference = Math.round(abs(mercury.angle - venus.angle));
+        console.log(mvAngleDifference);
 
-        // Use a tolerance value to account for small variations due to floating-point precision
-        let tolerance = 1;
+        if (mvAngleDifference == 0) {
+            console.log("conjunction");
+        }
+
+        if(mvAngleDifference == 60) {
+            console.log("sextile");
+        }
+
+
+        if (mvAngleDifference == 90) {
+            console.log('square');
+        }
+
+        if (mvAngleDifference == 120) {
+            console.log("trine");
+        }
+
+        if (mvAngleDifference == 180) {
+            console.log("opposition");
+        }
+
+
+
+
+
+      
 
         // // Compare the angular separation to determine the aspect
         // if (angleDifference < tolerance) {
