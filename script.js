@@ -55,19 +55,19 @@ function draw()
     if(!isPaused) {
         mercury.update();
         venus.update();
-        earth.update();
-        mars.update();
-        jupiter.update();
-        saturn.update();
+        // earth.update();
+        // mars.update();
+        // jupiter.update();
+        // saturn.update();
 
     }
 
     mercury.display();
     venus.display();
-    earth.display();
-    mars.display();
-    jupiter.display();
-    saturn.display();
+    // earth.display();
+    // mars.display();
+    // jupiter.display();
+    // saturn.display();
 
     // mercury.update();
     // mercury.display();
@@ -102,6 +102,10 @@ function draw()
 function keyPressed() {
     if (keyCode === ENTER) {
         isPaused = !isPaused;
+
+
+
+
     }
 }
 
