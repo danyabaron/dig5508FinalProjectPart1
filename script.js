@@ -5,6 +5,8 @@ let bigStars = [];
 
 let mercury, venus, earth, mars, jupiter, saturn;
 
+let isPaused = false;
+
 function setup() {
     angleMode(DEGREES);
     createCanvas(1200, 1200);
@@ -76,7 +78,7 @@ function draw()
     // check to see if planets are in certain positions
     // unsure how i'm going to calculate these positions
     // maybe w frame count?
-    
+
 
 }
 
