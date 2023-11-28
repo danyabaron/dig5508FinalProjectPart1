@@ -117,20 +117,20 @@ function keyPressed() {
             console.log("conjunction");
         }
 
-        if(59 <= mvAngleDifference <= 65) {
+        else if(59 <= mvAngleDifference <= 65) {
             console.log("sextile");
         }
 
 
-        if (88 <= mvAngleDifference <= 92) {
+        else if (88 <= mvAngleDifference <= 92) {
             console.log('square');
         }
 
-        if (mvAngleDifference == 120) {
+        else if (mvAngleDifference == 120) {
             console.log("trine");
         }
 
-        if (mvAngleDifference == 180) {
+        else if (mvAngleDifference == 180) {
             console.log("opposition");
         }
 
