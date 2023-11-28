@@ -103,25 +103,47 @@ function keyPressed() {
     if (keyCode === ENTER) {
         isPaused = !isPaused;
 
-        if (mercury.angle && venus.angle == 0) {
-            console.log("conjunction");
-        }
+        // if (mercury.angle && venus.angle == 0) {
+        //     console.log("conjunction");
+        // }
 
-        if(mercury.angle && venus.angle == 60) {
-            console.log("sextile");
-        }
+        // if(mercury.angle && venus.angle == 60) {
+        //     console.log("sextile");
+        // }
 
-        if (mercury.angle && venus.angle == 90) {
-            console.log('square');
-        }
 
-        if (mercury.angle && venus.angle == 120) {
-            console.log("trine");
-        }
+        // if (mercury.angle && venus.angle == 90) {
+        //     console.log('square');
+        // }
 
-        if (mercury.angle && venus.angle == 180) {
-            console.log("opposition");
-        }
+        // if (mercury.angle && venus.angle == 120) {
+        //     console.log("trine");
+        // }
+
+        // if (mercury.angle && venus.angle == 180) {
+        //     console.log("opposition");
+        // }
+
+
+        // Calculate the angular separation between Mercury and Venus
+        let angleDifference = abs(mercury.angle - venus.angle);
+        console.log(angleDifference);
+
+        // Use a tolerance value to account for small variations due to floating-point precision
+        let tolerance = 1;
+
+        // // Compare the angular separation to determine the aspect
+        // if (angleDifference < tolerance) {
+        //     console.log("conjunction");
+        // } else if (abs(angleDifference - 60) < tolerance) {
+        //     console.log("sextile");
+        // } else if (abs(angleDifference - 90) < tolerance) {
+        //     console.log('square');
+        // } else if (abs(angleDifference - 120) < tolerance) {
+        //     console.log("trine");
+        // } else if (abs(angleDifference - 180) < tolerance) {
+        //     console.log("opposition");
+        // }
 
 
     }
@@ -150,7 +172,7 @@ class Planet {
             this.angle = 0;
         }
 
-        console.log(this.angle);
+        // console.log(this.angle);
 
     }
 
