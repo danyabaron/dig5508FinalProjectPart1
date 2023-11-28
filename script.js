@@ -52,23 +52,40 @@ function draw()
     fill('yellow');
     ellipse(width/2, height/2, 150)
 
-    mercury.update();
+    if(!isPaused) {
+        mercury.update();
+        venus.update();
+        earth.update();
+        mars.update();
+        jupiter.update();
+        saturn.update();
+
+    }
+
     mercury.display();
-
-    venus.update();
     venus.display();
-
-    earth.update();
     earth.display();
-
-    mars.update();
     mars.display();
-
-    jupiter.update();
     jupiter.display();
-
-    saturn.update();
     saturn.display();
+
+    // mercury.update();
+    // mercury.display();
+
+    // venus.update();
+    // venus.display();
+
+    // earth.update();
+    // earth.display();
+
+    // mars.update();
+    // mars.display();
+
+    // jupiter.update();
+    // jupiter.display();
+
+    // saturn.update();
+    // saturn.display();
 
 
     //notes for danya
@@ -80,6 +97,12 @@ function draw()
     // maybe w frame count?
 
 
+}
+
+function keyPressed() {
+    if (keyCode === ENTER) {
+        isPaused = !isPaused;
+    }
 }
 
 
