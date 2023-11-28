@@ -120,6 +120,7 @@ class Planet {
     // update planet position
     update() {
         this.angle += this.orbitSpeed;
+        console.log(this.angle += this.orbitSpeed);
 
     }
 
