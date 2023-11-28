@@ -24,7 +24,8 @@ function setup() {
 
     //2
 
-    mercury = new Planet(20, 120, 0.8, 30, color('#626f96'));
+    mercury = new Planet(20, 120, 0.8
+        , 30, color('#626f96'));
     venus = new Planet(30, 175, 0.4, 100, color('#de6840'));
     earth = new Planet(20, 230, 0.6, 190, color('green'));
     mars = new Planet(30, 280, 1, 230, color(('red')));
@@ -112,16 +113,16 @@ function keyPressed() {
         let mvAngleDifference = Math.round(abs(mercury.angle - venus.angle));
         console.log(mvAngleDifference);
 
-        if (mvAngleDifference == 0) {
+        if (0 <= mvAngleDifference <= 3) {
             console.log("conjunction");
         }
 
-        if(mvAngleDifference == 60) {
+        if(59 <= mvAngleDifference <= 65) {
             console.log("sextile");
         }
 
 
-        if (mvAngleDifference == 90) {
+        if (88 <= mvAngleDifference <= 92) {
             console.log('square');
         }
 
