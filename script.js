@@ -114,7 +114,7 @@ function keyPressed() {
             textStyle(BOLD);
             fill('white');
             textSize(24);
-            text("This is a conjunction", width/2, 200);
+            text("This is a conjunction", width/2, 600);
             console.log('conjunction');
         }
 
@@ -149,6 +149,13 @@ function keyPressed() {
             text("This is a opposition", width/2, 600);
             console.log('opposition');
         }
+        else {
+            textStyle(BOLD);
+            fill('white');
+            textSize(24);
+            text("No significant aspect", width/2, 400);
+        }
+        
 
 
 
