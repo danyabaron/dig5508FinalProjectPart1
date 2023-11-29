@@ -120,7 +120,7 @@ function keyPressed() {
             fill('white');
             textSize(24);
             currentText="This is a conjunction";
-            text(currentText, width/2, 600);
+            text(currentText, width/2, height-100);
             console.log('conjunction');
         }
 
