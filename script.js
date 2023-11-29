@@ -151,7 +151,7 @@ function keyPressed() {
         }
         else {
             textStyle(BOLD);
-            fill('white');
+            fill('yellow');
             textSize(24);
             text("No significant aspect", width/2, 400);
             console.log('display no significant aspect');
