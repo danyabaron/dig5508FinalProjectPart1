@@ -139,32 +139,42 @@ function keyPressed() {
 
         if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
             textStyle(BOLD);
+            fill('white');
             textSize(24);
-            text("This is a conjunction", width/2, 600);
+            text("This is a conjunction", width/2, 200);
+            console.log('conjunction');
         }
 
         else if(59 <= mvAngleDifference && mvAngleDifference <= 65) {
             textStyle(BOLD);
+            fill('white');
             textSize(24);
             text("This is a sextile", width/2, 600);
+            console.log('sextile');
         }
 
         else if (88 <= mvAngleDifference && mvAngleDifference <= 92) {
             textStyle(BOLD);
+            fill('white');
             textSize(24);
             text("This is a square", width/2, 600);
+            console.log('square');
         }
 
         else if (mvAngleDifference === 120) {
             textStyle(BOLD);
+            fill('white');
             textSize(24);
             text("This is a trine", width/2, 600);
+            console.log('trine');
         }
 
         else if (mvAngleDifference === 180) {
             textStyle(BOLD);
+            fill('white');
             textSize(24);
             text("This is a opposition", width/2, 600);
+            console.log('opposition');
         }
 
 
