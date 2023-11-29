@@ -156,27 +156,7 @@ function keyPressed() {
             text("No significant aspect", width/2, 400);
             console.log('display no significant aspect');
         }
-        
-
-
-
-
-
-
-      
-
-        // // Compare the angular separation to determine the aspect
-        // if (angleDifference < tolerance) {
-        //     console.log("conjunction");
-        // } else if (abs(angleDifference - 60) < tolerance) {
-        //     console.log("sextile");
-        // } else if (abs(angleDifference - 90) < tolerance) {
-        //     console.log('square');
-        // } else if (abs(angleDifference - 120) < tolerance) {
-        //     console.log("trine");
-        // } else if (abs(angleDifference - 180) < tolerance) {
-        //     console.log("opposition");
-        // }
+    
 
 
     }
