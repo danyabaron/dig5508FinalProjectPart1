@@ -6,6 +6,7 @@ let bigStars = [];
 let mercury, venus, earth, mars, jupiter, saturn;
 
 let isPaused = false;
+var currentText;
 
 function setup() {
     angleMode(DEGREES);
@@ -184,6 +185,10 @@ class Planet {
          if (this.angle >= 360) {
             this.angle = 0;
         }
+
+        fill("white");
+        textSize(24);
+
 
         // console.log(this.angle);
 
