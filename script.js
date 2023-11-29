@@ -46,7 +46,7 @@ function draw()
 
     fill("white")
     textSize(24)
-    text(currentText, width/2, height-1000);
+    text(currentText, width/2+200, height-1100);
 
 
     for (let i = 0; i < smallStars.length; i++) {
