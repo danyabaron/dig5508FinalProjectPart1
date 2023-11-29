@@ -128,7 +128,8 @@ function keyPressed() {
             textStyle(BOLD);
             fill('white');
             textSize(24);
-            text("This is a sextile", width/2, 600);
+            currentText="This is a sextile"
+            // text("This is a sextile", width/2, 600);
             console.log('sextile');
         }
 
@@ -136,7 +137,8 @@ function keyPressed() {
             textStyle(BOLD);
             fill('white');
             textSize(24);
-            text("This is a square", width/2, 600);
+            currentText = "This is a square";
+            // text(, width/2, 600);
             console.log('square');
         }
 
@@ -144,7 +146,8 @@ function keyPressed() {
             textStyle(BOLD);
             fill('white');
             textSize(24);
-            text("This is a trine", width/2, 600);
+            currentText="This is a trine"
+            // text("This is a trine", width/2, 600);
             console.log('trine');
         }
 
@@ -152,7 +155,8 @@ function keyPressed() {
             textStyle(BOLD);
             fill('white');
             textSize(24);
-            text("This is a opposition", width/2, 600);
+            currentText="This is a opposition";
+            // text("This is a opposition", width/2, 600);
             console.log('opposition');
         }
         else {
