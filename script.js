@@ -25,8 +25,7 @@ function setup() {
 
     //2
 
-    mercury = new Planet(20, 120, 0.8
-        , 30, color('#626f96'));
+    mercury = new Planet(20, 120, 0.8, 30, color('#626f96'));
     venus = new Planet(30, 175, 0.4, 100, color('#de6840'));
     earth = new Planet(20, 230, 0.6, 190, color('green'));
     mars = new Planet(30, 280, 1, 230, color(('red')));
@@ -46,7 +45,7 @@ function draw()
 
     fill("white")
     textSize(24)
-    text(currentText, width/2+200, height-1100);
+    text(currentText, width/2-200, height-1100);
 
 
     for (let i = 0; i < smallStars.length; i++) {
@@ -77,23 +76,23 @@ function draw()
     jupiter.display();
     saturn.display();
 
-    mercury.update();
-    mercury.display();
+    // mercury.update();
+    // mercury.display();
 
-    venus.update();
-    venus.display();
+    // venus.update();
+    // venus.display();
 
-    earth.update();
-    earth.display();
+    // earth.update();
+    // earth.display();
 
-    mars.update();
-    mars.display();
+    // mars.update();
+    // mars.display();
 
-    jupiter.update();
-    jupiter.display();
+    // jupiter.update();
+    // jupiter.display();
 
-    saturn.update();
-    saturn.display();
+    // saturn.update();
+    // saturn.display();
 
 
     //notes for danya
@@ -119,8 +118,8 @@ function keyPressed() {
             textStyle(BOLD);
             fill('white');
             textSize(24);
-            currentText="This is a conjunction";
-            text(currentText, width/2, height-600);
+            currentText="This is a conjunction between Venus and Mercury";
+            // text(currentText, width/2-200, height-600);
             console.log('conjunction');
         }
 
@@ -128,7 +127,7 @@ function keyPressed() {
             textStyle(BOLD);
             fill('white');
             textSize(24);
-            currentText="This is a sextile"
+            currentText="This is a sextile between Venus and Mercury";
             // text("This is a sextile", width/2, 600);
             console.log('sextile');
         }
@@ -137,7 +136,7 @@ function keyPressed() {
             textStyle(BOLD);
             fill('white');
             textSize(24);
-            currentText = "This is a square";
+            currentText = "This is a square between Venus and Mercury";
             // text(, width/2, 600);
             console.log('square');
         }
@@ -146,7 +145,7 @@ function keyPressed() {
             textStyle(BOLD);
             fill('white');
             textSize(24);
-            currentText="This is a trine"
+            currentText="This is a trine between Venus and Mercury"
             // text("This is a trine", width/2, 600);
             console.log('trine');
         }
@@ -155,7 +154,7 @@ function keyPressed() {
             textStyle(BOLD);
             fill('white');
             textSize(24);
-            currentText="This is a opposition";
+            currentText="This is a opposition between Venus and Mercury";
             // text("This is a opposition", width/2, 600);
             console.log('opposition');
         }
