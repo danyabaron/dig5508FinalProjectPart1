@@ -44,6 +44,10 @@ function draw()
     noStroke();
     // frameRate(40);
 
+    fill("white")
+    textSize(24)
+    text(currentText, width/2, height-100);
+
 
     for (let i = 0; i < smallStars.length; i++) {
         smallStars[i].display();
@@ -115,7 +119,8 @@ function keyPressed() {
             textStyle(BOLD);
             fill('white');
             textSize(24);
-            text("This is a conjunction", width/2, 600);
+            currentText="This is a conjunction";
+            text(currentText, width/2, 600);
             console.log('conjunction');
         }
 
