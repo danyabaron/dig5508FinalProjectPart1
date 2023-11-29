@@ -138,23 +138,33 @@ function keyPressed() {
         console.log(mvAngleDifference);
 
         if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
-            console.log("conjunction");
+            textStyle(BOLD);
+            textSize(24);
+            text("This is a conjunction", width/2, 600);
         }
 
         else if(59 <= mvAngleDifference && mvAngleDifference <= 65) {
-            console.log("sextile");
+            textStyle(BOLD);
+            textSize(24);
+            text("This is a sextile", width/2, 600);
         }
 
         else if (88 <= mvAngleDifference && mvAngleDifference <= 92) {
-            console.log('square');
+            textStyle(BOLD);
+            textSize(24);
+            text("This is a square", width/2, 600);
         }
 
         else if (mvAngleDifference === 120) {
-            console.log("trine");
+            textStyle(BOLD);
+            textSize(24);
+            text("This is a trine", width/2, 600);
         }
 
         else if (mvAngleDifference === 180) {
-            console.log("opposition");
+            textStyle(BOLD);
+            textSize(24);
+            text("This is a opposition", width/2, 600);
         }
 
 
