@@ -106,33 +106,6 @@ function keyPressed() {
     if (keyCode === ENTER) {
         isPaused = !isPaused;
 
-        
-
-
-        // Calculate the angular separation between Mercury and Venus
-        // let mvAngleDifference = Math.round(abs(mercury.angle - venus.angle));
-        // console.log(mvAngleDifference);
-
-        // if (0 <= mvAngleDifference <= 3) {
-        //     console.log("conjunction");
-        // }
-
-        // else if(59 <= mvAngleDifference <= 65) {
-        //     console.log("sextile");
-        // }
-
-
-        // else if (88 <= mvAngleDifference <= 92) {
-        //     console.log('square');
-        // }
-
-        // else if (mvAngleDifference == 120) {
-        //     console.log("trine");
-        // }
-
-        // else if (mvAngleDifference == 180) {
-        //     console.log("opposition");
-        // }
 
         let mvAngleDifference = Math.round(abs(mercury.angle - venus.angle));
         console.log(mvAngleDifference);
