@@ -46,7 +46,7 @@ function draw()
 
     fill("white")
     textSize(24)
-    text(currentText, width/2, height-100);
+    text(currentText, width/2, height-1000);
 
 
     for (let i = 0; i < smallStars.length; i++) {
@@ -63,37 +63,37 @@ function draw()
     if(!isPaused) {
         mercury.update();
         venus.update();
-        // earth.update();
-        // mars.update();
-        // jupiter.update();
-        // saturn.update();
+        earth.update();
+        mars.update();
+        jupiter.update();
+        saturn.update();
 
     }
 
     mercury.display();
     venus.display();
-    // earth.display();
-    // mars.display();
-    // jupiter.display();
-    // saturn.display();
+    earth.display();
+    mars.display();
+    jupiter.display();
+    saturn.display();
 
-    // mercury.update();
-    // mercury.display();
+    mercury.update();
+    mercury.display();
 
-    // venus.update();
-    // venus.display();
+    venus.update();
+    venus.display();
 
-    // earth.update();
-    // earth.display();
+    earth.update();
+    earth.display();
 
-    // mars.update();
-    // mars.display();
+    mars.update();
+    mars.display();
 
-    // jupiter.update();
-    // jupiter.display();
+    jupiter.update();
+    jupiter.display();
 
-    // saturn.update();
-    // saturn.display();
+    saturn.update();
+    saturn.display();
 
 
     //notes for danya
@@ -120,7 +120,7 @@ function keyPressed() {
             fill('white');
             textSize(24);
             currentText="This is a conjunction";
-            text(currentText, width/2, height-100);
+            text(currentText, width/2, height-600);
             console.log('conjunction');
         }
 
@@ -159,7 +159,8 @@ function keyPressed() {
             textStyle(BOLD);
             fill('yellow');
             textSize(24);
-            text("No significant aspect", width/2, 400);
+            currentText="No significant aspect";
+            text(currentText, width/2, 600);
             console.log('display no significant aspect');
         }
     
