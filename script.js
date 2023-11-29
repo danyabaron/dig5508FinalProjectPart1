@@ -45,7 +45,11 @@ function draw()
 
     fill("white")
     textSize(24)
-    text(currentText, width/2-200, height-1100);
+    text(currentText, width/2-100, height-1100);
+
+    fill('yellow');
+    textSize(18);
+    text('Press Enter to learn about Planetary Alignments',width/2-550, height-1100 )
 
 
     for (let i = 0; i < smallStars.length; i++) {
