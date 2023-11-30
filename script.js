@@ -236,10 +236,19 @@ class Planet {
     //     }
     // }
 
-        fill('white')
-        textSize(15);
-        text(this.label, x - 33, y - 25);
-        console.log('display label');
+          // Display the label for Mercury
+        if (this.label === "Mercury") {
+            fill('white');
+            textSize(15);
+            text(this.label, x - 33, y - 25);
+        }
+
+        // Display the label for Venus
+        else if (this.label === "Venus") {
+            fill('white');
+            textSize(15);
+            text(this.label, x - 20, y - 33);
+        }
 
 
 
