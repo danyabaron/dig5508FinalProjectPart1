@@ -249,6 +249,7 @@ class Planet {
 
           // Display the label for Mercury
         if (this.label === "Mercury") {
+            noStroke();
             fill('white');
             textSize(15);
             text(this.label, x - 33, y - 25);
@@ -256,6 +257,7 @@ class Planet {
 
         // Display the label for Venus
         else if (this.label === "Venus") {
+            noStroke();
             fill('white');
             textSize(15);
             text(this.label, x - 20, y - 33);
