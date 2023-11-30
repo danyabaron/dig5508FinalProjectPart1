@@ -228,6 +228,7 @@ class Planet {
 
         // draw orbit
         noFill();
+        strokeWeight(2);
         stroke(150);
         ellipse(width/2, height/2, this.orbitRadius * 2);
 
