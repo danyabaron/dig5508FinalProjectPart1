@@ -133,6 +133,16 @@ function keyPressed() {
             textSize(24);
             currentText="This is a sextile between Venus and Mercury";
             // text("This is a sextile", width/2, 600);
+
+            stroke('white');
+            strokeWeight(4);
+            line(
+                width/2 + venus.orbitRadius * cos(venus.angle),
+                height/2 + venus.orbitRadius * sin(venus.angle),
+                width/2 + mercury.orbitRadius * cos(mercury.angle),
+                height/2 + mercury.orbitRadius * sin(mercury.angle)
+            );
+
             console.log('sextile');
         }
 
