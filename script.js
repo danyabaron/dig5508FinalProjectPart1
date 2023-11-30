@@ -208,6 +208,8 @@ class Planet {
         this.orbitSpeed = orbitSpeed;
         this.color = color;
         this.label = label;
+        this.x = x;
+        this.y = y;
 
     }
 
@@ -234,8 +236,8 @@ class Planet {
 
     display() {
         
-        let x = width/2 + this.orbitRadius * cos(this.angle);
-        let y = height/2 + this.orbitRadius * sin(this.angle);
+        this.x = width/2 + this.orbitRadius * cos(this.angle);
+        this.y = height/2 + this.orbitRadius * sin(this.angle);
 
 
 
@@ -249,7 +251,7 @@ class Planet {
         // draw planet
         fill(this.color);
         noStroke();
-        ellipse(x, y, this.radius * 2);
+        ellipse(this.x, this.y, this.radius * 2);
 
     //       // Draw the black outline
     // for (let offsetX = -2; offsetX <= 2; offsetX++) {
@@ -265,7 +267,7 @@ class Planet {
             noStroke();
             fill('white');
             textSize(15);
-            text(this.label, x - 33, y - 25);
+            text(this.label, this.x - 33, this.y - 25);
         }
 
         // Display the label for Venus
@@ -273,7 +275,7 @@ class Planet {
             noStroke();
             fill('white');
             textSize(15);
-            text(this.label, x - 20, y - 33);
+            text(this.label, this.x - 20, this.y - 33);
         }
 
 
