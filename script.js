@@ -227,8 +227,8 @@ class Planet {
         noStroke();
         ellipse(x, y, this.radius * 2);
         fill('white')
-        textSize(12);
-        text(x+20, y+20, this.label);
+        textSize(20);
+        text(this.label, x + 20, y + 20);
         console.log('display label');
 
 
