@@ -178,12 +178,13 @@ function keyPressed() {
 
 
 class Planet {
-    constructor(radius, orbitRadius, orbitSpeed, angle, color) {
+    constructor(radius, orbitRadius, orbitSpeed, angle, color, label) {
         this.radius = radius;
         this.orbitRadius = orbitRadius;
         this.angle = angle;
         this.orbitSpeed = orbitSpeed;
         this.color = color;
+        this.label = label;
 
     }
 
