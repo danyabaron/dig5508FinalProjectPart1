@@ -109,6 +109,8 @@ function draw()
     // maybe w frame count?
 
     fill('white');
+    console.log(width/2);
+    console.log( width/2 + venus.orbitRadius * cos(venus.angle))
     line(
         width/2 + venus.orbitRadius * cos(venus.angle),
         height/2 + venus.orbitRadius * sin(venus.angle),
