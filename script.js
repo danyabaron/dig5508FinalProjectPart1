@@ -7,6 +7,7 @@ let mercury, venus, earth, mars, jupiter, saturn;
 
 let isPaused = false;
 var currentText;
+var angleDraw;
 
 function setup() {
     angleMode(DEGREES);
@@ -136,12 +137,13 @@ function keyPressed() {
 
             stroke('white');
             strokeWeight(4);
-            line(
+            angleDraw = line(
                 width/2 + venus.orbitRadius * cos(venus.angle),
                 height/2 + venus.orbitRadius * sin(venus.angle),
                 width/2 + mercury.orbitRadius * cos(mercury.angle),
                 height/2 + mercury.orbitRadius * sin(mercury.angle)
             );
+            console.log('drew line');
 
             console.log('sextile');
         }
