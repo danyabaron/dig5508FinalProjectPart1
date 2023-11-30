@@ -226,9 +226,19 @@ class Planet {
         fill(this.color);
         noStroke();
         ellipse(x, y, this.radius * 2);
+
+    //       // Draw the black outline
+    // for (let offsetX = -2; offsetX <= 2; offsetX++) {
+    //     for (let offsetY = -2; offsetY <= 2; offsetY++) {
+    //         fill(0); // Black color for the outline
+    //         textSize(12);
+    //         text(this.label, x + offsetX, y + offsetY);
+    //     }
+    // }
+
         fill('white')
-        textSize(20);
-        text(this.label, x + 20, y + 20);
+        textSize(15);
+        text(this.label, x - 33, y - 25);
         console.log('display label');
 
 
