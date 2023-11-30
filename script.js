@@ -108,15 +108,19 @@ function draw()
     // unsure how i'm going to calculate these positions
     // maybe w frame count?
 
+    
+    console.log(venus.x);
+    // console.log( width/2 + venus.orbitRadius * cos(venus.angle))
+    // line(
+    //     width/2 + venus.orbitRadius * cos(venus.angle),
+    //     height/2 + venus.orbitRadius * sin(venus.angle),
+    //     width/2 + mercury.orbitRadius * cos(mercury.angle),
+    //     height/2 + mercury.orbitRadius * sin(mercury.angle)
+    // );
     fill('white');
-    console.log(width/2);
-    console.log( width/2 + venus.orbitRadius * cos(venus.angle))
-    line(
-        width/2 + venus.orbitRadius * cos(venus.angle),
-        height/2 + venus.orbitRadius * sin(venus.angle),
-        width/2 + mercury.orbitRadius * cos(mercury.angle),
-        height/2 + mercury.orbitRadius * sin(mercury.angle)
-    );
+    strokeWeight(3);
+
+    line(mercury.x, mercury.y, venus.x, venus.y);
     
 
 
@@ -208,8 +212,8 @@ class Planet {
         this.orbitSpeed = orbitSpeed;
         this.color = color;
         this.label = label;
-        this.x = x;
-        this.y = y;
+        this.x;
+        this.y;
 
     }
 
