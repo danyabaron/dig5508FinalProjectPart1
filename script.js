@@ -119,7 +119,7 @@ function keyPressed() {
         console.log(mvAngleDifference);
 
         if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
-            textStyle(BOLD);
+            // textStyle(BOLD);
             fill('white');
             textSize(24);
             currentText="This is a conjunction between Venus and Mercury";
@@ -128,7 +128,7 @@ function keyPressed() {
         }
 
         else if(59 <= mvAngleDifference && mvAngleDifference <= 65) {
-            textStyle(BOLD);
+            // textStyle(BOLD);
             fill('white');
             textSize(24);
             currentText="This is a sextile between Venus and Mercury";
@@ -137,7 +137,7 @@ function keyPressed() {
         }
 
         else if (88 <= mvAngleDifference && mvAngleDifference <= 92) {
-            textStyle(BOLD);
+            // textStyle(BOLD);
             fill('white');
             textSize(24);
             currentText = "This is a square between Venus and Mercury";
@@ -146,7 +146,7 @@ function keyPressed() {
         }
 
         else if (mvAngleDifference === 120) {
-            textStyle(BOLD);
+            // textStyle(BOLD);
             fill('white');
             textSize(24);
             currentText="This is a trine between Venus and Mercury"
@@ -155,7 +155,7 @@ function keyPressed() {
         }
 
         else if (mvAngleDifference === 180) {
-            textStyle(BOLD);
+            // textStyle(BOLD);
             fill('white');
             textSize(24);
             currentText="This is a opposition between Venus and Mercury";
@@ -163,7 +163,7 @@ function keyPressed() {
             console.log('opposition');
         }
         else {
-            textStyle(BOLD);
+            // textStyle(BOLD);
             fill('yellow');
             textSize(24);
             currentText="No significant aspect";
