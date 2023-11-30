@@ -108,6 +108,15 @@ function draw()
     // unsure how i'm going to calculate these positions
     // maybe w frame count?
 
+    fill('white');
+    line(
+        width/2 + venus.orbitRadius * cos(venus.angle),
+        height/2 + venus.orbitRadius * sin(venus.angle),
+        width/2 + mercury.orbitRadius * cos(mercury.angle),
+        height/2 + mercury.orbitRadius * sin(mercury.angle)
+    );
+    
+
 
 }
 
