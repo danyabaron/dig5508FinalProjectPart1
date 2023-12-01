@@ -195,10 +195,24 @@ class Planet {
         ellipse(this.x, this.y, this.radius * 2);
 
         // Display the label for the planet
-        noStroke();
-        fill('white');
-        textSize(15);
-        text(this.label, this.x - 20, this.y - 33);
+        // noStroke();
+        // fill('white');
+        // textSize(15);
+        // text(this.label, this.x - 20, this.y - 33);
+
+        if (this.label === "Mercury") {
+            noStroke();
+            fill('white');
+            textSize(15);
+            text(this.label, this.x - 33, this.y - 25);
+        } else if (this.label === "Venus") {
+            noStroke();
+            fill('white');
+            textSize(15);
+            text(this.label, this.x - 20, this.y - 33);
+        }
+
+        
     }
   
    drawLineTo(target) {
