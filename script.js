@@ -117,13 +117,14 @@ function draw()
     //     width/2 + mercury.orbitRadius * cos(mercury.angle),
     //     height/2 + mercury.orbitRadius * sin(mercury.angle)
     // );
+
     if (isPaused) {
         fill('white');
         strokeWeight(3);
-        console.log("mercury x" + mercury.x);
-        console.log("mercury y" + mercury.y);
-        console.log("venus x" + venus.x);
-        console.log("venus y" + venus.y);
+        console.log("mercury x " + mercury.x);
+        console.log("mercury y " + mercury.y);
+        console.log("venus x " + venus.x);
+        console.log("venus y " + venus.y);
 
 
 
