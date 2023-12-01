@@ -120,6 +120,12 @@ function draw()
     if (isPaused) {
         fill('white');
         strokeWeight(3);
+        console.log("mercury x" + mercury.x);
+        console.log("mercury y" + mercury.y);
+        console.log("venus x" + venus.x);
+        console.log("venus y" + venus.y);
+
+
 
         line(mercury.x, mercury.y, venus.x, venus.y);
         console.log('display line');
