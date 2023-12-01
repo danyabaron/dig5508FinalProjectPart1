@@ -45,7 +45,7 @@ function draw()
     // frameRate(40);
 
     fill('yellow');
-    line(30, 30, 200, 200);
+    line(30, 40, 200, 200);
 
     fill("white")
     textSize(24)
