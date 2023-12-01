@@ -3,11 +3,12 @@
 let smallStars = [];
 let bigStars = [];
 
-let mercury, venus, earth, mars, jupiter, saturn;
+// let mercury, venus, earth, mars, jupiter, saturn;
+let planets = [];
 
 let isPaused = false;
 var currentText;
-var angleDraw;
+
 
 function setup() {
     angleMode(DEGREES);
@@ -26,8 +27,8 @@ function setup() {
 
     //2
 
-    mercury = new Planet(20, 120, 0.8, 30, color('#626f96'), "Mercury");
-    venus = new Planet(30, 175, 0.4, 100, color('#de6840'), "Venus");
+    planets.push(new Planet(20, 120, 0.8, 30, color('#626f96'), "Mercury"));
+    planets.push(new Planet(30, 175, 0.4, 100, color('#de6840'), "Venus"));
     // earth = new Planet(20, 230, 0.6, 190, color('green'));
     // mars = new Planet(30, 280, 1, 230, color(('red')));
     // jupiter = new Planet(50, 340, 0.3, 60, color('#7e79a3'));
@@ -66,18 +67,21 @@ function draw()
     fill('yellow');
     ellipse(width/2, height/2, 150)
 
-    if(!isPaused) {
-        mercury.update();
-        venus.update();
-        // earth.update();
-        // mars.update();
-        // jupiter.update();
-        // saturn.update();
-
+    if (!isPaused) {
+        for (let i = 0; i < planets.length; i++) {
+            planets[i].update();
+        }
     }
 
-    mercury.display();
-    venus.display();
+    for (let i = 0; i < planets.length; i++) {
+        planets[i].display();
+    }
+
+    for (let i = 0; i < planets.length - 1; i++) {
+        for (let j = i + 1; j < planets.length; j++) {
+            planets[i].drawLineTo(planets[j]); // Draw lines between planets
+        }
+    }
 
     
     // earth.display();
@@ -104,37 +108,7 @@ function draw()
     // saturn.display();
 
 
-    //notes for danya
-    // make a class that takes in Planet and 
-    //tracks its position through a value or method
-    //have user pause the animation and after it is paused
-    // check to see if planets are in certain positions
-    // unsure how i'm going to calculate these positions
-    // maybe w frame count?
 
-    
-    // console.log(venus.x);
-    // console.log( width/2 + venus.orbitRadius * cos(venus.angle))
-    // line(
-    //     width/2 + venus.orbitRadius * cos(venus.angle),
-    //     height/2 + venus.orbitRadius * sin(venus.angle),
-    //     width/2 + mercury.orbitRadius * cos(mercury.angle),
-    //     height/2 + mercury.orbitRadius * sin(mercury.angle)
-    // );
-
-    // if (isPaused) {
-    //     stroke('yellow');
-    //     strokeWeight(3);
-    //     console.log("mercury x " + mercury.x);
-    //     console.log("mercury y " + mercury.y);
-    //     console.log("venus x " + venus.x);
-    //     console.log("venus y " + venus.y);
-
-
-
-    //     line(mercury.x, mercury.y, venus.x, venus.y);
-    //     console.log('display line');
-    // }
     
 
 
@@ -145,69 +119,35 @@ function keyPressed() {
         isPaused = !isPaused;
 
 
-        let mvAngleDifference = Math.round(abs(mercury.angle - venus.angle));
-        console.log("angle between venus and mercury: " + mvAngleDifference);
+        let mvAngleDifference;
+        for (let i = 0; i < planets.length - 1; i++) {
+            for (let j = i + 1; j < planets.length; j++) {
+                mvAngleDifference = Math.round(abs(planets[i].angle - planets[j].angle));
+              console.log(mvAngleDifference);
 
-        if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
-            // textStyle(BOLD);
-            fill('white');
-            textSize(24);
-            currentText="This is a conjunction between Venus and Mercury";
-            // text(currentText, width/2-200, height-600);
-            console.log('conjunction');
+                // Check for planetary alignments...
+                if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
+                    planets[i].drawLine = true; // Set drawLine property to true for conjunction
+                    currentText = `This is a conjunction between ${planets[i].label} and ${planets[j].label}`;
+                } else if (59 <= mvAngleDifference && mvAngleDifference <= 65) {
+                    planets[i].drawLine = true; // Set drawLine property to true for sextile
+                    currentText = `This is a sextile between ${planets[i].label} and ${planets[j].label}`;
+                } else if (88 <= mvAngleDifference && mvAngleDifference <= 92) {
+                    planets[i].drawLine = true; // Set drawLine property to true for square
+                    currentText = `This is a square between ${planets[i].label} and ${planets[j].label}`;
+                } else if (118 <= mvAngleDifference && mvAngleDifference <= 122) {
+                    planets[i].drawLine = true; // Set drawLine property to true for trine
+                    currentText = `This is a trine between ${planets[i].label} and ${planets[j].label}`;
+                } else if (178 <= mvAngleDifference && mvAngleDifference <= 182) {
+                    planets[i].drawLine = true; // Set drawLine property to true for opposition
+                    currentText = `This is an opposition between ${planets[i].label} and ${planets[j].label}`;
+                } else {
+                    planets[i].drawLine = false;
+                    currentText = "No significant aspect between planets";
+                }
+            }
         }
 
-        else if(59 <= mvAngleDifference && mvAngleDifference <= 65) {
-            // textStyle(BOLD);
-            fill('white');
-            textSize(24);
-            currentText="This is a sextile between Venus and Mercury";
-            // text("This is a sextile", width/2, 600);
-
-            stroke('yellow');
-            strokeWeight(3);
-            line(mercury.x, mercury.y, venus.x, venus.y);
-            console.log('display sextile line');
-            
-            
-
-            console.log('sextile');
-        }
-
-        else if (88 <= mvAngleDifference && mvAngleDifference <= 92) {
-            // textStyle(BOLD);
-            fill('white');
-            textSize(24);
-            currentText = "This is a square between Venus and Mercury";
-            // text(, width/2, 600);
-            console.log('square');
-        }
-
-        else if (mvAngleDifference === 120) {
-            // textStyle(BOLD);
-            fill('white');
-            textSize(24);
-            currentText="This is a trine between Venus and Mercury"
-            // text("This is a trine", width/2, 600);
-            console.log('trine');
-        }
-
-        else if (mvAngleDifference === 180) {
-            // textStyle(BOLD);
-            fill('white');
-            textSize(24);
-            currentText="This is a opposition between Venus and Mercury";
-            // text("This is a opposition", width/2, 600);
-            console.log('opposition');
-        }
-        else {
-            // textStyle(BOLD);
-            fill('yellow');
-            textSize(24);
-            currentText="No significant aspect";
-            text(currentText, width/2, 600);
-            console.log('display no significant aspect');
-        }
     
 
 
@@ -225,83 +165,50 @@ class Planet {
         this.label = label;
         this.x;
         this.y;
-
+      this.drawLine = false;
     }
 
-
-    // update planet position
+    // Update planet position
     update() {
         this.angle += this.orbitSpeed;
-        
-        // console.log(this.angle += this.orbitSpeed);
 
-         // Reset angle when it reaches or exceeds 360 degrees
-         if (this.angle >= 360) {
+        // Reset angle when it reaches or exceeds 360 degrees
+        if (this.angle >= 360) {
             this.angle = 0;
         }
-
-        fill("white");
-        textSize(24);
-
-
-
-        // console.log(this.angle);
-
     }
 
+    // Display planet
     display() {
-        
         this.x = width/2 + this.orbitRadius * cos(this.angle);
         this.y = height/2 + this.orbitRadius * sin(this.angle);
 
-
-
-        // draw orbit
+        // Draw orbit
         noFill();
         strokeWeight(2);
         stroke(150);
         ellipse(width/2, height/2, this.orbitRadius * 2);
 
-
-        // draw planet
+        // Draw planet
         fill(this.color);
         noStroke();
         ellipse(this.x, this.y, this.radius * 2);
 
-    //       // Draw the black outline
-    // for (let offsetX = -2; offsetX <= 2; offsetX++) {
-    //     for (let offsetY = -2; offsetY <= 2; offsetY++) {
-    //         fill(0); // Black color for the outline
-    //         textSize(12);
-    //         text(this.label, x + offsetX, y + offsetY);
-    //     }
-    // }
-
-          // Display the label for Mercury
-        if (this.label === "Mercury") {
-            noStroke();
-            fill('white');
-            textSize(15);
-            text(this.label, this.x - 33, this.y - 25);
-        }
-
-        // Display the label for Venus
-        else if (this.label === "Venus") {
-            noStroke();
-            fill('white');
-            textSize(15);
-            text(this.label, this.x - 20, this.y - 33);
-        }
-
-
-
-
-
-
+        // Display the label for the planet
+        noStroke();
+        fill('white');
+        textSize(15);
+        text(this.label, this.x - 20, this.y - 33);
     }
-
+  
+   drawLineTo(target) {
+        if (this.drawLine) {
+            stroke('yellow');
+            strokeWeight(3);
+            line(this.x, this.y, target.x, target.y);
+        }
+    }
 }
-
 
 
 
