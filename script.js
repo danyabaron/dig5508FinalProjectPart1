@@ -211,6 +211,11 @@ class Planet {
             fill('white');
             textSize(15);
             text(this.label, this.x - 20, this.y - 33);
+        } else if (this.label === "Mars") {
+            noStroke();
+            fill('white');
+            textSize(15);
+            text(this.label, this.x - 20, this.y - 35);
         }
 
         
