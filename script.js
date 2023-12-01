@@ -146,7 +146,7 @@ function keyPressed() {
 
 
         let mvAngleDifference = Math.round(abs(mercury.angle - venus.angle));
-        console.log(mvAngleDifference);
+        console.log("angle between venus and mercury: " + mvAngleDifference);
 
         if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
             // textStyle(BOLD);
@@ -164,15 +164,12 @@ function keyPressed() {
             currentText="This is a sextile between Venus and Mercury";
             // text("This is a sextile", width/2, 600);
 
-            stroke('white');
-            strokeWeight(4);
-            angleDraw = line(
-                width/2 + venus.orbitRadius * cos(venus.angle),
-                height/2 + venus.orbitRadius * sin(venus.angle),
-                width/2 + mercury.orbitRadius * cos(mercury.angle),
-                height/2 + mercury.orbitRadius * sin(mercury.angle)
-            );
-            console.log('drew line');
+            stroke('yellow');
+            strokeWeight(3);
+            line(mercury.x, mercury.y, venus.x, venus.y);
+            console.log('display sextile line');
+            
+            
 
             console.log('sextile');
         }
