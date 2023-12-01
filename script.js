@@ -130,18 +130,23 @@ function keyPressed() {
                 if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
                     planets[i].drawLine = true; // Set drawLine property to true for conjunction
                     currentText = `This is a conjunction between ${planets[i].label} and ${planets[j].label}`;
+                    console.log('conjunction');
                 } else if (59 <= mvAngleDifference && mvAngleDifference <= 65) {
                     planets[i].drawLine = true; // Set drawLine property to true for sextile
                     currentText = `This is a sextile between ${planets[i].label} and ${planets[j].label}`;
+                    console.log('sextile');
                 } else if (88 <= mvAngleDifference && mvAngleDifference <= 92) {
                     planets[i].drawLine = true; // Set drawLine property to true for square
                     currentText = `This is a square between ${planets[i].label} and ${planets[j].label}`;
+                    console.log('square');
                 } else if (118 <= mvAngleDifference && mvAngleDifference <= 122) {
                     planets[i].drawLine = true; // Set drawLine property to true for trine
                     currentText = `This is a trine between ${planets[i].label} and ${planets[j].label}`;
+                    console.log('trine')
                 } else if (178 <= mvAngleDifference && mvAngleDifference <= 182) {
                     planets[i].drawLine = true; // Set drawLine property to true for opposition
                     currentText = `This is an opposition between ${planets[i].label} and ${planets[j].label}`;
+                    console.log('opposition');
                 } else {
                     planets[i].drawLine = false;
                     currentText = "No significant aspect between planets";
