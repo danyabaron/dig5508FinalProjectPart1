@@ -41,11 +41,10 @@ function draw()
 {
 
     background('black');
-    // noStroke();
+    noStroke();
     // frameRate(40);
 
-    fill('yellow');
-    line(30, 40, 200, 200);
+  
 
     fill("white")
     textSize(24)
@@ -123,19 +122,19 @@ function draw()
     //     height/2 + mercury.orbitRadius * sin(mercury.angle)
     // );
 
-    if (isPaused) {
-        fill('white');
-        strokeWeight(3);
-        console.log("mercury x " + mercury.x);
-        console.log("mercury y " + mercury.y);
-        console.log("venus x " + venus.x);
-        console.log("venus y " + venus.y);
+    // if (isPaused) {
+    //     stroke('yellow');
+    //     strokeWeight(3);
+    //     console.log("mercury x " + mercury.x);
+    //     console.log("mercury y " + mercury.y);
+    //     console.log("venus x " + venus.x);
+    //     console.log("venus y " + venus.y);
 
 
 
-        line(mercury.x, mercury.y, venus.x, venus.y);
-        console.log('display line');
-    }
+    //     line(mercury.x, mercury.y, venus.x, venus.y);
+    //     console.log('display line');
+    // }
     
 
 
@@ -146,72 +145,72 @@ function keyPressed() {
         isPaused = !isPaused;
 
 
-        // let mvAngleDifference = Math.round(abs(mercury.angle - venus.angle));
-        // console.log(mvAngleDifference);
+        let mvAngleDifference = Math.round(abs(mercury.angle - venus.angle));
+        console.log(mvAngleDifference);
 
-        // if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
-        //     // textStyle(BOLD);
-        //     fill('white');
-        //     textSize(24);
-        //     currentText="This is a conjunction between Venus and Mercury";
-        //     // text(currentText, width/2-200, height-600);
-        //     console.log('conjunction');
-        // }
+        if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
+            // textStyle(BOLD);
+            fill('white');
+            textSize(24);
+            currentText="This is a conjunction between Venus and Mercury";
+            // text(currentText, width/2-200, height-600);
+            console.log('conjunction');
+        }
 
-        // else if(59 <= mvAngleDifference && mvAngleDifference <= 65) {
-        //     // textStyle(BOLD);
-        //     fill('white');
-        //     textSize(24);
-        //     currentText="This is a sextile between Venus and Mercury";
-        //     // text("This is a sextile", width/2, 600);
+        else if(59 <= mvAngleDifference && mvAngleDifference <= 65) {
+            // textStyle(BOLD);
+            fill('white');
+            textSize(24);
+            currentText="This is a sextile between Venus and Mercury";
+            // text("This is a sextile", width/2, 600);
 
-        //     stroke('white');
-        //     strokeWeight(4);
-        //     angleDraw = line(
-        //         width/2 + venus.orbitRadius * cos(venus.angle),
-        //         height/2 + venus.orbitRadius * sin(venus.angle),
-        //         width/2 + mercury.orbitRadius * cos(mercury.angle),
-        //         height/2 + mercury.orbitRadius * sin(mercury.angle)
-        //     );
-        //     console.log('drew line');
+            stroke('white');
+            strokeWeight(4);
+            angleDraw = line(
+                width/2 + venus.orbitRadius * cos(venus.angle),
+                height/2 + venus.orbitRadius * sin(venus.angle),
+                width/2 + mercury.orbitRadius * cos(mercury.angle),
+                height/2 + mercury.orbitRadius * sin(mercury.angle)
+            );
+            console.log('drew line');
 
-        //     console.log('sextile');
-        // }
+            console.log('sextile');
+        }
 
-        // else if (88 <= mvAngleDifference && mvAngleDifference <= 92) {
-        //     // textStyle(BOLD);
-        //     fill('white');
-        //     textSize(24);
-        //     currentText = "This is a square between Venus and Mercury";
-        //     // text(, width/2, 600);
-        //     console.log('square');
-        // }
+        else if (88 <= mvAngleDifference && mvAngleDifference <= 92) {
+            // textStyle(BOLD);
+            fill('white');
+            textSize(24);
+            currentText = "This is a square between Venus and Mercury";
+            // text(, width/2, 600);
+            console.log('square');
+        }
 
-        // else if (mvAngleDifference === 120) {
-        //     // textStyle(BOLD);
-        //     fill('white');
-        //     textSize(24);
-        //     currentText="This is a trine between Venus and Mercury"
-        //     // text("This is a trine", width/2, 600);
-        //     console.log('trine');
-        // }
+        else if (mvAngleDifference === 120) {
+            // textStyle(BOLD);
+            fill('white');
+            textSize(24);
+            currentText="This is a trine between Venus and Mercury"
+            // text("This is a trine", width/2, 600);
+            console.log('trine');
+        }
 
-        // else if (mvAngleDifference === 180) {
-        //     // textStyle(BOLD);
-        //     fill('white');
-        //     textSize(24);
-        //     currentText="This is a opposition between Venus and Mercury";
-        //     // text("This is a opposition", width/2, 600);
-        //     console.log('opposition');
-        // }
-        // else {
-        //     // textStyle(BOLD);
-        //     fill('yellow');
-        //     textSize(24);
-        //     currentText="No significant aspect";
-        //     text(currentText, width/2, 600);
-        //     console.log('display no significant aspect');
-        // }
+        else if (mvAngleDifference === 180) {
+            // textStyle(BOLD);
+            fill('white');
+            textSize(24);
+            currentText="This is a opposition between Venus and Mercury";
+            // text("This is a opposition", width/2, 600);
+            console.log('opposition');
+        }
+        else {
+            // textStyle(BOLD);
+            fill('yellow');
+            textSize(24);
+            currentText="No significant aspect";
+            text(currentText, width/2, 600);
+            console.log('display no significant aspect');
+        }
     
 
 
