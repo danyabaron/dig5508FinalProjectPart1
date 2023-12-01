@@ -224,6 +224,18 @@ class Planet {
             textSize(15);
             text(this.label, this.x - 20, this.y - 35);
         }
+        else if (this.label === "Jupiter") {
+            noStroke();
+            fill('white');
+            textSize(15);
+            text(this.label, this.x - 25, this.y - 56);
+        }
+        else if (this.label === "Saturn") {
+            noStroke();
+            fill('white');
+            textSize(15);
+            text(this.label, this.x - 25, this.y - 59);
+        }
 
         
     }
