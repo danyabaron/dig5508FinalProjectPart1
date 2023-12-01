@@ -41,8 +41,11 @@ function draw()
 {
 
     background('black');
-    noStroke();
+    // noStroke();
     // frameRate(40);
+
+    fill('yellow');
+    line(30, 30, 200, 200);
 
     fill("white")
     textSize(24)
@@ -76,6 +79,8 @@ function draw()
 
     mercury.display();
     venus.display();
+
+    
     // earth.display();
     // mars.display();
     // jupiter.display();
