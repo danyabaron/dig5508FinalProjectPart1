@@ -109,7 +109,7 @@ function draw()
     // maybe w frame count?
 
     
-    console.log(venus.x);
+    // console.log(venus.x);
     // console.log( width/2 + venus.orbitRadius * cos(venus.angle))
     // line(
     //     width/2 + venus.orbitRadius * cos(venus.angle),
