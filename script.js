@@ -37,9 +37,9 @@ function setup() {
     planets.push(new Planet(20, 120, 0.8, 30, color('#626f96'), "Mercury"));
     planets.push(new Planet(30, 175, 0.4, 100, color('#de6840'), "Venus"));
     // earth = new Planet(20, 230, 0.6, 190, color('green'));
-    // planets.push(new Planet(30, 240, 1, 220, color('red'), "Mars"));
-    // planets.push(new Planet(50, 340, 0.3, 60, color('#7e79a3'), "Jupiter"));
-    // planets.push(new Planet(50, 450, 0.1, 120, color('gray'), "Saturn"));
+    planets.push(new Planet(30, 240, 1, 220, color('red'), "Mars"));
+    planets.push(new Planet(50, 340, 0.3, 60, color('#7e79a3'), "Jupiter"));
+    planets.push(new Planet(50, 450, 0.1, 120, color('gray'), "Saturn"));
    
     // jupiter = new Planet(50, 340, 0.3, 60, color('#7e79a3'));
     // saturn = new Planet(50, 450, 0.1, 120, color('gray'));
@@ -63,7 +63,11 @@ function draw()
 
     fill('yellow');
     textSize(18);
-    text('Press Enter to learn about Planetary Alignments',width/2-550, height-1100 )
+    text('Press Enter to learn about Planetary Alignments',width/2-550, height-1100);
+
+    fill('yellow');
+    textSize(18);
+    text('When the planets make an angle, hover over it with your mouse to learn more',width/2-550, height-1070 )
 
 
     for (let i = 0; i < smallStars.length; i++) {
