@@ -30,9 +30,9 @@ function setup() {
     planets.push(new Planet(20, 120, 0.8, 30, color('#626f96'), "Mercury"));
     planets.push(new Planet(30, 175, 0.4, 100, color('#de6840'), "Venus"));
     // earth = new Planet(20, 230, 0.6, 190, color('green'));
-    planets.push(new Planet(30, 240, 1, 220, color('red'), "Mars"));
-    planets.push(new Planet(50, 340, 0.3, 60, color('#7e79a3'), "Jupiter"));
-    planets.push(new Planet(50, 450, 0.1, 120, color('gray'), "Saturn"));
+    // planets.push(new Planet(30, 240, 1, 220, color('red'), "Mars"));
+    // planets.push(new Planet(50, 340, 0.3, 60, color('#7e79a3'), "Jupiter"));
+    // planets.push(new Planet(50, 450, 0.1, 120, color('gray'), "Saturn"));
    
     // jupiter = new Planet(50, 340, 0.3, 60, color('#7e79a3'));
     // saturn = new Planet(50, 450, 0.1, 120, color('gray'));
@@ -117,30 +117,30 @@ function draw()
 
 }
 
-function distToLine(x, y, x1, y1, x2, y2) {
-    let numerator = abs((y2 - y1) * x - (x2 - x1) * y + x2 * y1 - y2 * x1);
-    let denominator = dist(x1, y1, x2, y2);
+// function distToLine(x, y, x1, y1, x2, y2) {
+//     let numerator = abs((y2 - y1) * x - (x2 - x1) * y + x2 * y1 - y2 * x1);
+//     let denominator = dist(x1, y1, x2, y2);
     
-    if (denominator === 0) {
-        return dist(x, y, x1, y1); // Handle case where the line is just a point
-    }
+//     if (denominator === 0) {
+//         return dist(x, y, x1, y1); // Handle case where the line is just a point
+//     }
 
-    let distance = numerator / denominator;
-    console.log('Numerator:', numerator, 'Denominator:', denominator, 'Distance:', distance);
-    return distance;
-}
+//     let distance = numerator / denominator;
+//     console.log('Numerator:', numerator, 'Denominator:', denominator, 'Distance:', distance);
+//     return distance;
+// }
 
 
 
-function mouseOverLine(planet1, planet2) {
-    console.log('mouseX:', mouseX, 'mouseY:', mouseY);
-    let d = distToLine(mouseX, mouseY, planet1.x, planet1.y, planet2.x, planet2.y);
-    let threshold = 5;
+// function mouseOverLine(planet1, planet2) {
+//     console.log('mouseX:', mouseX, 'mouseY:', mouseY);
+//     let d = distToLine(mouseX, mouseY, planet1.x, planet1.y, planet2.x, planet2.y);
+//     let threshold = 5;
 
-    console.log('Distance to line:', d);
+//     console.log('Distance to line:', d);
 
-    return d < threshold;
-}
+//     return d < threshold;
+// }
 
 // Helper function to calculate the distance from a point to a line
 
