@@ -117,6 +117,19 @@ function draw()
 
 }
 
+
+function mouseOverLine(planet1, planet2) {
+    // Calculate the distance from the mouse to the line formed by the two planets
+    let d = dist(mouseX, mouseY, planet1.x, planet1.y, planet2.x, planet2.y);
+    console.log("distance between mouseX and line is: " + d);
+  
+    // Set a threshold value for the mouse proximity to the line
+    let threshold = 5; // Adjust as needed
+  
+    // If the distance is within the threshold, the mouse is considered over the line
+    return d < threshold;
+  }
+
 function keyPressed() {
     if (keyCode === ENTER) {
         isPaused = !isPaused;
@@ -131,10 +144,10 @@ function keyPressed() {
                 // Check for planetary alignments...
                 if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
                     planets[i].drawLine = true; // Set drawLine property to true for conjunction
-                    if(mouseX && mouseY == planets[i].drawLineTo(planets[j])) {
+                    if (mouseOverLine(planets[i], planets[j])) {
                         currentText = `This is a conjunction between ${planets[i].label} and ${planets[j].label}`;
-
-                    }
+                      }
+                      console.log('changed current text');
                     
                     console.log('conjunction');
                 } else if (59 <= mvAngleDifference && mvAngleDifference <= 65) {
@@ -257,6 +270,7 @@ class Planet {
 
         // }
     }
+}
 }
 
 
