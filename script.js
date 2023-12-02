@@ -136,6 +136,11 @@ function keyPressed() {
 
 
         let mvAngleDifference;
+        let alignments = []; // List to store alignment information
+
+
+
+
         for (let i = 0; i < planets.length - 1; i++) {
             for (let j = i + 1; j < planets.length; j++) {
                 mvAngleDifference = Math.round(abs(planets[i].angle - planets[j].angle));
@@ -145,8 +150,8 @@ function keyPressed() {
                 if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
                     planets[i].drawLine = true; // Set drawLine property to true for conjunction
                     if (mouseOverLine(planets[i], planets[j])) {
-                        currentText = `This is a conjunction between ${planets[i].label} and ${planets[j].label}`;
-                      }
+                        alignments.push(`Conjunction between ${planets[i].label} and ${planets[j].label}`);
+                    }
                       console.log('changed current text');
                     
                     console.log('conjunction');
@@ -168,9 +173,15 @@ function keyPressed() {
                     console.log('opposition');
                 } else {
                     planets[i].drawLine = false;
-                    currentText = "No significant aspect between planets";
+                    // currentText = "No significant aspect between planets";
                 }
             }
+        }
+        // Update currentText based on alignments
+        if (alignments.length > 0) {
+            currentText = alignments.join('\n'); // Concatenate alignments into a string
+        } else {
+            currentText = "No significant aspect between planets";
         }
 
     
