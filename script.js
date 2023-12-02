@@ -255,6 +255,8 @@ function keyPressed() {
         
 
         for (let i = 0; i < planets.length - 1; i++) {
+
+            planets[i].drawLine = false;
             for (let j = i + 1; j < planets.length; j++) {
 
                 // if(isPaused) {
