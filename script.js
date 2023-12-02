@@ -117,7 +117,7 @@ function draw()
                   }
                   else {
                     currentText ="";
-                    console.log('mouse not over line');
+                    // console.log('mouse not over line');
                   }
 
             }
@@ -140,7 +140,7 @@ function draw()
                   }
                   else {
                     currentText ="";
-                    console.log('mouse not over line');
+                    // console.log('mouse not over line');
                   }
 
             }
@@ -164,7 +164,7 @@ function draw()
 
                   else {
                     currentText ="";
-                    console.log('mouse not over line');
+                    // console.log('mouse not over line');
                   }
 
             }
@@ -185,6 +185,10 @@ function draw()
 
                     console.log('changed current text');
                   }
+                  else {
+                    currentText ="";
+                    // console.log('mouse not over line');
+                  }
 
             }
 
@@ -204,6 +208,10 @@ function draw()
                     currentText = `This is an opposition between ${planets[i].label} and ${planets[j].label}`;
 
                     console.log('changed current text');
+                  }
+                  else {
+                    currentText ="";
+                    // console.log('mouse not over line');
                   }
 
             }
@@ -230,6 +238,7 @@ function draw()
 function keyPressed() {
     if (keyCode === ENTER) {
         isPaused = !isPaused;
+        console.log("pause boolean " + isPaused);
 
 
         let mvAngleDifference;
@@ -252,6 +261,7 @@ function keyPressed() {
                     planets[i].drawLine = true; // Set drawLine property to true for conjunction
                     alignment = CONJUNCTION;                                      
                     console.log('conjunction');
+                    console.log("pause boolean in conjunction " + isPaused);
                 } else if (59 <= mvAngleDifference && mvAngleDifference <= 65) {
                     planets[i].drawLine = true; // Set drawLine property to true for sextile
                     alignment = SEXTILE;   
@@ -301,7 +311,7 @@ class Planet {
         this.label = label;
         this.x;
         this.y;
-      this.drawLine = false;
+        this.drawLine = false;
     }
 
     // Update planet position
