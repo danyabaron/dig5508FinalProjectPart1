@@ -148,6 +148,41 @@ function draw()
 
             }
 
+            else if (alignment == TRINE) {
+
+                if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
+                && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
+                    
+                    // console.log("mouse x: " + mouseX);
+                    // console.log("mouse y: " + mouseY);
+                    // console.log("first planet x: " + planets[i].x);
+                    // console.log("first planet y: " + planets[i].y);
+                    // console.log("second planet x: " + planets[j].x);
+                    // console.log("second planet y: " + planets[j].y);
+
+                    currentText = `This is a trine between ${planets[i].label} and ${planets[j].label}`;
+
+                    console.log('changed current text');
+                  }
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
 
 
 
@@ -201,7 +236,8 @@ function keyPressed() {
                     console.log('square');
                 } else if (118 <= mvAngleDifference && mvAngleDifference <= 122) {
                     planets[i].drawLine = true; // Set drawLine property to true for trine
-                    currentText = `This is a trine between ${planets[i].label} and ${planets[j].label}`;
+                    alignment = TRINE;
+                   
                     console.log('trine')
                 } else if (178 <= mvAngleDifference && mvAngleDifference <= 182) {
                     planets[i].drawLine = true; // Set drawLine property to true for opposition
