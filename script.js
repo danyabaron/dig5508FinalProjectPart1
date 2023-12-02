@@ -87,9 +87,6 @@ function draw()
         }
     }
 
-    for (let i = 0; i < planets.length; i++) {
-        planets[i].display();
-    }
 
     for (let i = 0; i < planets.length - 1; i++) {
         for (let j = i + 1; j < planets.length; j++) {
@@ -229,6 +226,14 @@ function draw()
             
         }
     }
+
+
+
+    for (let i = 0; i < planets.length; i++) {
+        planets[i].display();
+    }
+
+    
 
 
 }
