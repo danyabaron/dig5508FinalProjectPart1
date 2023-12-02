@@ -119,21 +119,23 @@ function draw()
 
 
 function mouseOverLine(planet1, planet2) {
-    // Calculate the distance from the mouse to the line formed by the two planets
-    let d = dist(mouseX, mouseY, planet1.x, planet1.y, planet2.x, planet2.y);
+    console.log('mouseX:', mouseX, 'mouseY:', mouseY);
+    // Check if the mouse is close to the line formed by the two planets
+    let d = distToLine(mouseX, mouseY, planet1.x, planet1.y, planet2.x, planet2.y);
 
-    // Calculate the lengths of the two segments of the line from the planets to the mouse
-    let d1 = dist(mouseX, mouseY, planet1.x, planet1.y);
-    let d2 = dist(mouseX, mouseY, planet2.x, planet2.y);
+    // Set a threshold value for the mouse proximity to the line
+    let threshold = 5; // Adjust as needed
 
-    // Check if the sum of the lengths of the two segments is approximately equal to the length of the line
-    let lineLength = dist(planet1.x, planet1.y, planet2.x, planet2.y);
+    // If the distance is within the threshold, the mouse is considered over the line
+    return d < threshold;
+}
 
-    console.log('returned line length');
-
-    return d1 + d2 >= lineLength - 2 && d1 + d2 <= lineLength + 2;
-    
-  }
+// Helper function to calculate the distance from a point to a line
+function distToLine(x, y, x1, y1, x2, y2) {
+    let numerator = abs((y2 - y1) * x - (x2 - x1) * y + x2 * y1 - y2 * x1);
+    let denominator = dist(x1, y1, x2, y2);
+    return numerator / denominator;
+}
 
 function keyPressed() {
     if (keyCode === ENTER) {
