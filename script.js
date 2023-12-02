@@ -221,7 +221,7 @@ function draw()
 
             }
 
-            else if (alignment == OPPOSITION) {
+            else if (alignment == NONE) {
 
                 currentText = "No significant aspect between planets";
 
