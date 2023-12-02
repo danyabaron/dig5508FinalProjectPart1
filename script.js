@@ -14,6 +14,7 @@ const SEXTILE = 1;
 const SQUARE = 2;
 const TRINE = 3;
 const OPPOSITION = 4;
+const NONE = 5;
 
 
 function setup() {
@@ -95,12 +96,12 @@ function draw()
                 if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
                 && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
                     
-                    console.log("mouse x: " + mouseX);
-                    console.log("mouse y: " + mouseY);
-                    console.log("first planet x: " + planets[i].x);
-                    console.log("first planet y: " + planets[i].y);
-                    console.log("second planet x: " + planets[j].x);
-                    console.log("second planet y: " + planets[j].y);
+                    // console.log("mouse x: " + mouseX);
+                    // console.log("mouse y: " + mouseY);
+                    // console.log("first planet x: " + planets[i].x);
+                    // console.log("first planet y: " + planets[i].y);
+                    // console.log("second planet x: " + planets[j].x);
+                    // console.log("second planet y: " + planets[j].y);
 
                     currentText = `Conjunction between ${planets[i].label} and ${planets[j].label}`;
 
@@ -108,32 +109,15 @@ function draw()
                   }
 
             }
+
+            else if (alignment == SEXTILE) {
+
+            }
         }
     }
 
     
-    // earth.display();
-    // mars.display();
-    // jupiter.display();
-    // saturn.display();
 
-    // mercury.update();
-    // mercury.display();
-
-    // venus.update();
-    // venus.display();
-
-    // earth.update();
-    // earth.display();
-
-    // mars.update();
-    // mars.display();
-
-    // jupiter.update();
-    // jupiter.display();
-
-    // saturn.update();
-    // saturn.display();
 
 
 
@@ -142,32 +126,6 @@ function draw()
 
 }
 
-// function distToLine(x, y, x1, y1, x2, y2) {
-//     let numerator = abs((y2 - y1) * x - (x2 - x1) * y + x2 * y1 - y2 * x1);
-//     let denominator = dist(x1, y1, x2, y2);
-    
-//     if (denominator === 0) {
-//         return dist(x, y, x1, y1); // Handle case where the line is just a point
-//     }
-
-//     let distance = numerator / denominator;
-//     console.log('Numerator:', numerator, 'Denominator:', denominator, 'Distance:', distance);
-//     return distance;
-// }
-
-
-
-// function mouseOverLine(planet1, planet2) {
-//     console.log('mouseX:', mouseX, 'mouseY:', mouseY);
-//     let d = distToLine(mouseX, mouseY, planet1.x, planet1.y, planet2.x, planet2.y);
-//     let threshold = 5;
-
-//     console.log('Distance to line:', d);
-
-//     return d < threshold;
-// }
-
-// Helper function to calculate the distance from a point to a line
 
 
 
