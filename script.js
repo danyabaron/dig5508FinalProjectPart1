@@ -242,8 +242,8 @@ function keyPressed() {
 
 
         let mvAngleDifference;
-        planets.drawLine = false;
-        console.log('set drawline to false');
+        // planets.drawLine = false;
+        // console.log('set drawline to false');
 
 
         
