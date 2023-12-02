@@ -187,44 +187,11 @@ function draw()
 
             }
 
+            else if (alignment == OPPOSITION) {
 
+                currentText = "No significant aspect between planets";
 
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
+            }
             
         }
     }
@@ -277,7 +244,8 @@ function keyPressed() {
                     console.log('opposition');
                 } else {
                     planets[i].drawLine = false;
-                    currentText = "No significant aspect between planets";
+                    alignment = NONE;
+                   
                 }
             }
         }
