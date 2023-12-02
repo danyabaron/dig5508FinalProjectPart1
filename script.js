@@ -406,6 +406,10 @@ class Planet {
         strokeWeight(lineWeight);
         line(this.x, this.y, target.x, target.y);
     }
+
+    if(!this.drawLine) {
+        
+    }
 }
 }
 
