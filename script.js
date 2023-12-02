@@ -119,12 +119,13 @@ function draw()
 
 
 function mouseOverLine(planet1, planet2) {
-    console.log('mouseX:', mouseX, 'mouseY:', mouseY);
+    
     // Check if the mouse is close to the line formed by the two planets
     let d = distToLine(mouseX, mouseY, planet1.x, planet1.y, planet2.x, planet2.y);
 
     // Set a threshold value for the mouse proximity to the line
     let threshold = 5; // Adjust as needed
+    console.log('mouseX:', mouseX, 'mouseY:', mouseY);
 
     // If the distance is within the threshold, the mouse is considered over the line
     return d < threshold;
