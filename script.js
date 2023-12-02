@@ -243,10 +243,15 @@ function resetDrawLines() {
 
 function keyPressed() {
     if (keyCode === ENTER) {
+
+        
+
         isPaused = !isPaused;
         console.log("pause boolean " + isPaused);
 
-        resetDrawLines();
+        resetDrawLines(); 
+
+        
 
 
         let mvAngleDifference;
