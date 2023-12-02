@@ -251,10 +251,10 @@ function keyPressed() {
         for (let i = 0; i < planets.length - 1; i++) {
             for (let j = i + 1; j < planets.length; j++) {
 
-                if(isPaused) {
-                    planets[i].drawLine = false;
-                    console.log('set planet draw line to false when isPaused is false');
-                }
+                // if(isPaused) {
+                //     planets[i].drawLine = false;
+                //     console.log('set planet draw line to false when isPaused is false');
+                // }
 
                 
             
