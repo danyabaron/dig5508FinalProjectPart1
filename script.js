@@ -128,8 +128,11 @@ function mouseOverLine(planet1, planet2) {
 
     // Check if the sum of the lengths of the two segments is approximately equal to the length of the line
     let lineLength = dist(planet1.x, planet1.y, planet2.x, planet2.y);
-    return d1 + d2 >= lineLength - 2 && d1 + d2 <= lineLength + 2;
+
     console.log('returned line length');
+
+    return d1 + d2 >= lineLength - 2 && d1 + d2 <= lineLength + 2;
+    
   }
 
 function keyPressed() {
