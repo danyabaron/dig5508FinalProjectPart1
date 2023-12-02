@@ -389,6 +389,9 @@ class Planet {
     }
   
    drawLineTo(target) {
+
+     
+        
         if (this.drawLine) {
 
         let lineWeight = 3;
