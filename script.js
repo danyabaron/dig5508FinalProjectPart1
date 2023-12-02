@@ -8,13 +8,15 @@ let planets = [];
 
 let isPaused = false;
 var currentText;
-let alignment;
+
 const CONJUNCTION = 0;
 const SEXTILE = 1;
 const SQUARE = 2;
 const TRINE = 3;
 const OPPOSITION = 4;
 const NONE = 5;
+
+let alignment = NONE;
 
 
 function setup() {
@@ -37,7 +39,7 @@ function setup() {
     planets.push(new Planet(20, 120, 0.8, 30, color('#626f96'), "Mercury"));
     planets.push(new Planet(30, 175, 0.4, 100, color('#de6840'), "Venus"));
     // earth = new Planet(20, 230, 0.6, 190, color('green'));
-    planets.push(new Planet(30, 240, 1, 220, color('red'), "Mars"));
+    // planets.push(new Planet(30, 240, 1, 220, color('red'), "Mars"));
     // planets.push(new Planet(50, 340, 0.3, 60, color('#7e79a3'), "Jupiter"));
     // planets.push(new Planet(50, 450, 0.1, 120, color('gray'), "Saturn"));
    
@@ -257,6 +259,8 @@ function keyPressed() {
         let mvAngleDifference;
         // planets.drawLine = false;
         // console.log('set drawline to false');
+
+        alignment = NONE;
 
         
 
