@@ -411,6 +411,7 @@ class Planet {
     }
 
     if(!this.drawLine) {
+        noStroke();
         
     }
 }
