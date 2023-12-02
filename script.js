@@ -107,6 +107,10 @@ function draw()
 
                     console.log('changed current text');
                   }
+                  else {
+                    currentText ="";
+                    console.log('mouse not over line');
+                  }
 
             }
 
@@ -125,6 +129,10 @@ function draw()
                     currentText = `This is a sextile between ${planets[i].label} and ${planets[j].label}`;
 
                     console.log('changed current text');
+                  }
+                  else {
+                    currentText ="";
+                    console.log('mouse not over line');
                   }
 
             }
