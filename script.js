@@ -96,6 +96,7 @@ function draw()
                 if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
                 && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
                     
+                    strokeWeight(6);
                     // console.log("mouse x: " + mouseX);
                     // console.log("mouse y: " + mouseY);
                     // console.log("first planet x: " + planets[i].x);
