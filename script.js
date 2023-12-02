@@ -117,6 +117,12 @@ function draw()
 
 }
 
+function distToLine(x, y, x1, y1, x2, y2) {
+    let numerator = abs((y2 - y1) * x - (x2 - x1) * y + x2 * y1 - y2 * x1);
+    let denominator = dist(x1, y1, x2, y2);
+    console.log('Numerator:', numerator, 'Denominator:', denominator);
+    return numerator / denominator;
+}
 
 function mouseOverLine(planet1, planet2) {
     console.log('mouseX:', mouseX, 'mouseY:', mouseY);
@@ -129,11 +135,8 @@ function mouseOverLine(planet1, planet2) {
 }
 
 // Helper function to calculate the distance from a point to a line
-function distToLine(x, y, x1, y1, x2, y2) {
-    let numerator = abs((y2 - y1) * x - (x2 - x1) * y + x2 * y1 - y2 * x1);
-    let denominator = dist(x1, y1, x2, y2);
-    return numerator / denominator;
-}
+
+
 
 function keyPressed() {
     if (keyCode === ENTER) {
