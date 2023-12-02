@@ -141,7 +141,7 @@ function draw()
 
                     currentText = `This is a sextile between ${planets[i].label} and ${planets[j].label}`;
 
-                    console.log('changed current text');
+                    // console.log('changed current text');
                   }
                   else {
                     currentText ="";
@@ -164,7 +164,7 @@ function draw()
 
                     currentText = `This is a square between ${planets[i].label} and ${planets[j].label}`;
 
-                    console.log('changed current text');
+                    // console.log('changed current text');
                   }
 
                   else {
@@ -188,7 +188,7 @@ function draw()
 
                     currentText = `This is a trine between ${planets[i].label} and ${planets[j].label}`;
 
-                    console.log('changed current text');
+                    // console.log('changed current text');
                   }
                   else {
                     currentText ="";
@@ -212,7 +212,7 @@ function draw()
 
                     currentText = `This is an opposition between ${planets[i].label} and ${planets[j].label}`;
 
-                    console.log('changed current text');
+                    // console.log('changed current text');
                   }
                   else {
                     currentText ="";
