@@ -100,7 +100,7 @@ function draw()
                 if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
                 && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
                     
-                    strokeWeight(6);
+                    // strokeWeight(6);
                     // console.log("mouse x: " + mouseX);
                     // console.log("mouse y: " + mouseY);
                     // console.log("first planet x: " + planets[i].x);
@@ -361,9 +361,9 @@ class Planet {
   
    drawLineTo(target) {
         if (this.drawLine) {
-            stroke('yellow');
-            strokeWeight(3);
-            line(this.x, this.y, target.x, target.y);
+
+
+            
         if(mouseX >= min(this.x, target.x) &&
                 mouseX <= max(this.x, target.x) &&
                 mouseY >= min(this.y, target.y) &&
@@ -373,6 +373,10 @@ class Planet {
             strokeWeight(8);
             // line(this.x, this.y, target.x, target.y);
         }
+
+        stroke('yellow');
+            strokeWeight(3);
+            line(this.x, this.y, target.x, target.y);
     }
 }
 }
