@@ -8,7 +8,12 @@ let planets = [];
 
 let isPaused = false;
 var currentText;
-var alignment;
+let alignment;
+const CONJUNCTION = 0;
+const SEXTILE = 1;
+const SQUARE = 2;
+const TRINE = 3;
+const OPPOSITION = 4;
 
 
 function setup() {
@@ -174,6 +179,8 @@ function keyPressed() {
                     console.log("first planet y: " + planets[i].y);
                     console.log("second planet x: " + planets[j].x);
                     console.log("second planet y: " + planets[j].y);
+
+                    alignment = CONJUNCTION;
 
                     
                     if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
