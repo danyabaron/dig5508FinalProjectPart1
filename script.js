@@ -231,19 +231,22 @@ function draw()
     }
 
 
-
-    
-
-
 }
 
 
+function resetDrawLines() {
+    for (let i = 0; i < planets.length; i++) {
+        planets[i].drawLine = false;
+    }
+}
 
 
 function keyPressed() {
     if (keyCode === ENTER) {
         isPaused = !isPaused;
         console.log("pause boolean " + isPaused);
+
+        resetDrawLines();
 
 
         let mvAngleDifference;
