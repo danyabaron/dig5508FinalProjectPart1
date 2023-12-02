@@ -366,7 +366,7 @@ class Planet {
                 mouseY <= max(this.y, target.y))
         {
             stroke('yellow');
-            strokeWeight(6);
+            strokeWeight(8);
             line(this.x, this.y, target.x, target.y);
         }
     }
