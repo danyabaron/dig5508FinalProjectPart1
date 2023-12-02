@@ -165,17 +165,30 @@ function keyPressed() {
                 // Check for planetary alignments...
                 if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
                     planets[i].drawLine = true; // Set drawLine property to true for conjunction
-        
-                    // Check if the mouse is over the line
-                    if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x)
-                        && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
+
+                    console.log("mouse x: " + mouseX);
+                    console.log("mouse y: " + mouseY);
+                    console.log("first planet x: " + planets[i].x);
+                    console.log("first planet y: " + planets[i].y);
+                    console.log("second planet x: " + planets[j].x);
+                    console.log("second planet y: " + planets[j].y);
+                    
+                    if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
+                    && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
                         currentText = `Conjunction between ${planets[i].label} and ${planets[j].label}`;
+
                         console.log('changed current text');
-                    }
-        
+                      }
+                    
+                    // if (mouseOverLine(planets[i], planets[j])) {
+                    //     alignments.push(`Conjunction between ${planets[i].label} and ${planets[j].label}`);
+                    //     console.log('Detected conjunction:', planets[i].label, planets[j].label);
+                    //     console.log('pushed alignments text');
+                    // }
+                      
+                    
                     console.log('conjunction');
-                }
-             else if (59 <= mvAngleDifference && mvAngleDifference <= 65) {
+                } else if (59 <= mvAngleDifference && mvAngleDifference <= 65) {
                     planets[i].drawLine = true; // Set drawLine property to true for sextile
                     currentText = `This is a sextile between ${planets[i].label} and ${planets[j].label}`;
                     console.log('sextile');
