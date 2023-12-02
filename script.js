@@ -121,13 +121,15 @@ function draw()
 function mouseOverLine(planet1, planet2) {
     // Calculate the distance from the mouse to the line formed by the two planets
     let d = dist(mouseX, mouseY, planet1.x, planet1.y, planet2.x, planet2.y);
-    console.log("distance between mouseX and line is: " + d);
-  
-    // Set a threshold value for the mouse proximity to the line
-    let threshold = 5; // Adjust as needed
-  
-    // If the distance is within the threshold, the mouse is considered over the line
-    return d < threshold;
+
+    // Calculate the lengths of the two segments of the line from the planets to the mouse
+    let d1 = dist(mouseX, mouseY, planet1.x, planet1.y);
+    let d2 = dist(mouseX, mouseY, planet2.x, planet2.y);
+
+    // Check if the sum of the lengths of the two segments is approximately equal to the length of the line
+    let lineLength = dist(planet1.x, planet1.y, planet2.x, planet2.y);
+    return d1 + d2 >= lineLength - 2 && d1 + d2 <= lineLength + 2;
+    console.log('returned line length');
   }
 
 function keyPressed() {
@@ -151,6 +153,7 @@ function keyPressed() {
                     planets[i].drawLine = true; // Set drawLine property to true for conjunction
                     if (mouseOverLine(planets[i], planets[j])) {
                         alignments.push(`Conjunction between ${planets[i].label} and ${planets[j].label}`);
+                        console.log('pushed alignments text');
                     }
                       console.log('changed current text');
                     
