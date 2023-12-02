@@ -131,7 +131,11 @@ function keyPressed() {
                 // Check for planetary alignments...
                 if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
                     planets[i].drawLine = true; // Set drawLine property to true for conjunction
-                    currentText = `This is a conjunction between ${planets[i].label} and ${planets[j].label}`;
+                    if(mouseX && mouseY == planets[i].drawLineTo(planets[j])) {
+                        currentText = `This is a conjunction between ${planets[i].label} and ${planets[j].label}`;
+
+                    }
+                    
                     console.log('conjunction');
                 } else if (59 <= mvAngleDifference && mvAngleDifference <= 65) {
                     planets[i].drawLine = true; // Set drawLine property to true for sextile
