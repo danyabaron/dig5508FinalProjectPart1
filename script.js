@@ -89,6 +89,25 @@ function draw()
     for (let i = 0; i < planets.length - 1; i++) {
         for (let j = i + 1; j < planets.length; j++) {
             planets[i].drawLineTo(planets[j]); // Draw lines between planets
+
+            if (alignment == CONJUNCTION) {
+
+                if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
+                && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
+                    
+                    console.log("mouse x: " + mouseX);
+                    console.log("mouse y: " + mouseY);
+                    console.log("first planet x: " + planets[i].x);
+                    console.log("first planet y: " + planets[i].y);
+                    console.log("second planet x: " + planets[j].x);
+                    console.log("second planet y: " + planets[j].y);
+
+                    currentText = `Conjunction between ${planets[i].label} and ${planets[j].label}`;
+
+                    console.log('changed current text');
+                  }
+
+            }
         }
     }
 
@@ -173,23 +192,8 @@ function keyPressed() {
                 if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
                     planets[i].drawLine = true; // Set drawLine property to true for conjunction
 
-                    console.log("mouse x: " + mouseX);
-                    console.log("mouse y: " + mouseY);
-                    console.log("first planet x: " + planets[i].x);
-                    console.log("first planet y: " + planets[i].y);
-                    console.log("second planet x: " + planets[j].x);
-                    console.log("second planet y: " + planets[j].y);
 
-                    alignment = CONJUNCTION;
-
-                    
-                    if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
-                    && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
-                        currentText = `Conjunction between ${planets[i].label} and ${planets[j].label}`;
-
-                        console.log('changed current text');
-                      }
-                    
+                    alignment = CONJUNCTION;          
                     // if (mouseOverLine(planets[i], planets[j])) {
                     //     alignments.push(`Conjunction between ${planets[i].label} and ${planets[j].label}`);
                     //     console.log('Detected conjunction:', planets[i].label, planets[j].label);
