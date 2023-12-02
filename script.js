@@ -234,11 +234,6 @@ function draw()
 }
 
 
-function resetDrawLines() {
-    for (let i = 0; i < planets.length; i++) {
-        planets[i].drawLine = false;
-    }
-}
 
 
 function keyPressed() {
