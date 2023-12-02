@@ -96,7 +96,12 @@ function draw()
 
             // planets[i].drawLine = false;
 
-            planets[i].drawLineTo(planets[j]); // Draw lines between planets
+        
+                planets[i].drawLineTo(planets[j]); // Draw lines between planets
+
+            
+
+           
 
             if (alignment == CONJUNCTION) {
 
