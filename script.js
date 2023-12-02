@@ -112,6 +112,21 @@ function draw()
 
             else if (alignment == SEXTILE) {
 
+                if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
+                && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
+                    
+                    // console.log("mouse x: " + mouseX);
+                    // console.log("mouse y: " + mouseY);
+                    // console.log("first planet x: " + planets[i].x);
+                    // console.log("first planet y: " + planets[i].y);
+                    // console.log("second planet x: " + planets[j].x);
+                    // console.log("second planet y: " + planets[j].y);
+
+                    currentText = `This is a sextile between ${planets[i].label} and ${planets[j].label}`;
+
+                    console.log('changed current text');
+                  }
+
             }
         }
     }
@@ -149,7 +164,8 @@ function keyPressed() {
                     console.log('conjunction');
                 } else if (59 <= mvAngleDifference && mvAngleDifference <= 65) {
                     planets[i].drawLine = true; // Set drawLine property to true for sextile
-                    currentText = `This is a sextile between ${planets[i].label} and ${planets[j].label}`;
+                    alignment = SEXTILE;
+                    
                     console.log('sextile');
                 } else if (88 <= mvAngleDifference && mvAngleDifference <= 92) {
                     planets[i].drawLine = true; // Set drawLine property to true for square
