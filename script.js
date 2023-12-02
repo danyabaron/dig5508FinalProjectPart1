@@ -165,6 +165,9 @@ function keyPressed() {
                 // Check for planetary alignments...
                 if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
                     planets[i].drawLine = true; // Set drawLine property to true for conjunction
+
+                    console.log("mouse x: " + mouseX);
+                    console.log("mouse y: " + mouseY);
                     
                     if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
                     && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
