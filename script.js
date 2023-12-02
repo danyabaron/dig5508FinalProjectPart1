@@ -146,6 +146,11 @@ function draw()
                     console.log('changed current text');
                   }
 
+                  else {
+                    currentText ="";
+                    console.log('mouse not over line');
+                  }
+
             }
 
             else if (alignment == TRINE) {
