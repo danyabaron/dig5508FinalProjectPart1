@@ -8,6 +8,7 @@ let planets = [];
 
 let isPaused = false;
 var currentText;
+var alignment;
 
 
 function setup() {
@@ -153,6 +154,7 @@ function keyPressed() {
 
         let mvAngleDifference;
         let alignments = []; // List to store alignment information
+        
 
 
 
@@ -172,6 +174,7 @@ function keyPressed() {
                     console.log("first planet y: " + planets[i].y);
                     console.log("second planet x: " + planets[j].x);
                     console.log("second planet y: " + planets[j].y);
+
                     
                     if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
                     && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
