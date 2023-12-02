@@ -250,7 +250,6 @@ function keyPressed() {
         console.log("pause boolean " + isPaused);
 
 
-        
 
 
         let mvAngleDifference;
@@ -262,16 +261,8 @@ function keyPressed() {
         
 
         for (let i = 0; i < planets.length - 1; i++) {
-
-            // planets[i].drawLine = false;
             for (let j = i + 1; j < planets.length; j++) {
-
-                // if(isPaused) {
-                //     planets[i].drawLine = false;
-                //     console.log('set planet draw line to false when isPaused is false');
-                // }
-
-                
+               
             
               mvAngleDifference = Math.round(abs(planets[i].angle - planets[j].angle));
               console.log(mvAngleDifference);
