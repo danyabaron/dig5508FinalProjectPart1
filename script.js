@@ -177,11 +177,7 @@ function keyPressed() {
 
 
         let mvAngleDifference;
-        let alignments = []; // List to store alignment information
         
-
-
-
 
         for (let i = 0; i < planets.length - 1; i++) {
             for (let j = i + 1; j < planets.length; j++) {
@@ -191,16 +187,7 @@ function keyPressed() {
                 // Check for planetary alignments...
                 if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
                     planets[i].drawLine = true; // Set drawLine property to true for conjunction
-
-
-                    alignment = CONJUNCTION;          
-                    // if (mouseOverLine(planets[i], planets[j])) {
-                    //     alignments.push(`Conjunction between ${planets[i].label} and ${planets[j].label}`);
-                    //     console.log('Detected conjunction:', planets[i].label, planets[j].label);
-                    //     console.log('pushed alignments text');
-                    // }
-                      
-                    
+                    alignment = CONJUNCTION;                                      
                     console.log('conjunction');
                 } else if (59 <= mvAngleDifference && mvAngleDifference <= 65) {
                     planets[i].drawLine = true; // Set drawLine property to true for sextile
