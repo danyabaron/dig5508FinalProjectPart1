@@ -156,6 +156,7 @@ function keyPressed() {
                     planets[i].drawLine = true; // Set drawLine property to true for conjunction
                     if (mouseOverLine(planets[i], planets[j])) {
                         alignments.push(`Conjunction between ${planets[i].label} and ${planets[j].label}`);
+                        console.log('Detected conjunction:', planets[i].label, planets[j].label);
                         console.log('pushed alignments text');
                     }
                       console.log('changed current text');
