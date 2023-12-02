@@ -249,7 +249,13 @@ class Planet {
             stroke('yellow');
             strokeWeight(3);
             line(this.x, this.y, target.x, target.y);
-        }
+        //     if(mouseX >= min(this.x, target.x) &&
+        //         mouseX <= max(this.x, target.x) &&
+        //         mouseY >= min(this.y, target.y) &&
+        //         mouseY <= max(this.y, target.y))
+        // {
+
+        // }
     }
 }
 
