@@ -37,7 +37,7 @@ function setup() {
     planets.push(new Planet(20, 120, 0.8, 30, color('#626f96'), "Mercury"));
     planets.push(new Planet(30, 175, 0.4, 100, color('#de6840'), "Venus"));
     // earth = new Planet(20, 230, 0.6, 190, color('green'));
-    planets.push(new Planet(30, 240, 1, 220, color('red'), "Mars"));
+    // planets.push(new Planet(30, 240, 1, 220, color('red'), "Mars"));
     // planets.push(new Planet(50, 340, 0.3, 60, color('#7e79a3'), "Jupiter"));
     // planets.push(new Planet(50, 450, 0.1, 120, color('gray'), "Saturn"));
    
@@ -362,21 +362,20 @@ class Planet {
    drawLineTo(target) {
         if (this.drawLine) {
 
-
+        let lineWeight = 3;
             
         if(mouseX >= min(this.x, target.x) &&
                 mouseX <= max(this.x, target.x) &&
                 mouseY >= min(this.y, target.y) &&
                 mouseY <= max(this.y, target.y))
         {
-            stroke('yellow');
-            strokeWeight(8);
+            lineWeight = 8;
             // line(this.x, this.y, target.x, target.y);
         }
 
         stroke('yellow');
-            strokeWeight(3);
-            line(this.x, this.y, target.x, target.y);
+        strokeWeight(lineWeight);
+        line(this.x, this.y, target.x, target.y);
     }
 }
 }
