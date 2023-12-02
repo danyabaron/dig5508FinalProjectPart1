@@ -165,12 +165,20 @@ function keyPressed() {
                 // Check for planetary alignments...
                 if (0 <= mvAngleDifference && mvAngleDifference <= 3) {
                     planets[i].drawLine = true; // Set drawLine property to true for conjunction
-                    if (mouseOverLine(planets[i], planets[j])) {
-                        alignments.push(`Conjunction between ${planets[i].label} and ${planets[j].label}`);
-                        console.log('Detected conjunction:', planets[i].label, planets[j].label);
-                        console.log('pushed alignments text');
-                    }
-                      console.log('changed current text');
+                    
+                    if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
+                    && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
+                        currentText = `Conjunction between ${planets[i].label} and ${planets[j].label}`;
+
+                        console.log('changed current text');
+                      }
+                    
+                    // if (mouseOverLine(planets[i], planets[j])) {
+                    //     alignments.push(`Conjunction between ${planets[i].label} and ${planets[j].label}`);
+                    //     console.log('Detected conjunction:', planets[i].label, planets[j].label);
+                    //     console.log('pushed alignments text');
+                    // }
+                      
                     
                     console.log('conjunction');
                 } else if (59 <= mvAngleDifference && mvAngleDifference <= 65) {
@@ -191,17 +199,17 @@ function keyPressed() {
                     console.log('opposition');
                 } else {
                     planets[i].drawLine = false;
-                    // currentText = "No significant aspect between planets";
+                    currentText = "No significant aspect between planets";
                 }
             }
         }
         // Update currentText based on alignments
-        if (alignments.length > 0) {
-            currentText = alignments.join('\n'); // Concatenate alignments into a string
-            console.log('concatenated string');
-        } else {
-            currentText = "No significant aspect between planets";
-        }
+        // if (alignments.length > 0) {
+        //     currentText = alignments.join('\n'); // Concatenate alignments into a string
+        //     console.log('concatenated string');
+        // } else {
+        //     currentText = "No significant aspect between planets";
+        // }
 
     
 
