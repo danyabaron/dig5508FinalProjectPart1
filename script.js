@@ -371,7 +371,7 @@ class Planet {
         {
             stroke('yellow');
             strokeWeight(8);
-            line(this.x, this.y, target.x, target.y);
+            // line(this.x, this.y, target.x, target.y);
         }
     }
 }
