@@ -168,6 +168,38 @@ function draw()
             }
 
 
+            else if (alignment == OPPOSITION) {
+
+                if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
+                && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
+                    
+                    // console.log("mouse x: " + mouseX);
+                    // console.log("mouse y: " + mouseY);
+                    // console.log("first planet x: " + planets[i].x);
+                    // console.log("first planet y: " + planets[i].y);
+                    // console.log("second planet x: " + planets[j].x);
+                    // console.log("second planet y: " + planets[j].y);
+
+                    currentText = `This is an opposition between ${planets[i].label} and ${planets[j].label}`;
+
+                    console.log('changed current text');
+                  }
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
 
 
 
@@ -241,7 +273,7 @@ function keyPressed() {
                     console.log('trine')
                 } else if (178 <= mvAngleDifference && mvAngleDifference <= 182) {
                     planets[i].drawLine = true; // Set drawLine property to true for opposition
-                    currentText = `This is an opposition between ${planets[i].label} and ${planets[j].label}`;
+                    alignment = OPPOSITION;
                     console.log('opposition');
                 } else {
                     planets[i].drawLine = false;
