@@ -272,8 +272,12 @@ function keyPressed() {
                     alignment = CONJUNCTION;                                      
                     console.log('conjunction');
                     console.log("pause boolean in conjunction " + isPaused);
+                    if (isPaused) {
                     planets[i].drawLine = false; // Set drawLine property to false to clear line
                     console.log('cleared line');
+
+                    }
+                    
                 } else if (59 <= mvAngleDifference && mvAngleDifference <= 65) {
                     planets[i].drawLine = true; // Set drawLine property to true for sextile
                     alignment = SEXTILE;   
