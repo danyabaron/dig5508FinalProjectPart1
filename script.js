@@ -118,7 +118,7 @@ function draw()
 
                     currentText = `Conjunction between ${planets[i].label} and ${planets[j].label}`;
 
-                    console.log('changed current text');
+                    // console.log('changed current text');
                   }
                   else {
                     currentText ="";
