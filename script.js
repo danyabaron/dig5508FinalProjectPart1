@@ -249,9 +249,6 @@ function keyPressed() {
         isPaused = !isPaused;
         console.log("pause boolean " + isPaused);
 
-        for (let i = 0; i < planets.length; i++) {
-            planets[i].drawLine = false;
-        }
 
         
 
@@ -266,7 +263,7 @@ function keyPressed() {
 
         for (let i = 0; i < planets.length - 1; i++) {
 
-            planets[i].drawLine = false;
+            // planets[i].drawLine = false;
             for (let j = i + 1; j < planets.length; j++) {
 
                 // if(isPaused) {
@@ -345,12 +342,18 @@ class Planet {
 
     // Update planet position
     update() {
-        this.angle += this.orbitSpeed;
+        if(!isPaused) {
+            this.angle += this.orbitSpeed;
 
         // Reset angle when it reaches or exceeds 360 degrees
         if (this.angle >= 360) {
             this.angle = 0;
         }
+
+        this.drawLine = false;
+
+        }
+        
     }
 
     // Display planet
