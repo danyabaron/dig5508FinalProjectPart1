@@ -61,7 +61,7 @@ function draw()
 
     fill("white")
     textSize(24)
-    text(currentText, width/2-100, height-1100);
+    text(currentText, width/2-400, height-1000);
 
     fill('yellow');
     textSize(18);
@@ -125,14 +125,14 @@ function draw()
                     // console.log("second planet x: " + planets[j].x);
                     // console.log("second planet y: " + planets[j].y);
 
-                    currentText = `Conjunction between ${planets[i].label} and ${planets[j].label}`;
+                    currentText = `Conjunction between ${planets[i].label} and ${planets[j].label}\nA conjunction between these two encourages harmonious communication with others`;
                     
                      
                     
-                    fill("white")
-                    stroke('white');
-                    textSize(19)
-                    text('A conjunction between ${planets[i].label} and ${planets[j].label} encourages harmonious communication with others', width/2-100, height-900);
+                    // fill("white")
+                    // stroke('white');
+                    // textSize(19)
+                    // text('A conjunction between ${planets[i].label} and ${planets[j].label} encourages harmonious communication with others', width/2-100, height-900);
 
                     // fill(currentFill);
                     // fill(currentStroke);
