@@ -181,7 +181,7 @@ function draw()
                     // console.log("second planet x: " + planets[j].x);
                     // console.log("second planet y: " + planets[j].y);
 
-                    currentText = `This is a square between ${planets[i].label} and ${planets[j].label}`;
+                    currentText = `This is a square between ${planets[i].label} and ${planets[j].label}\nA square between these two can lead to carelessness with words and\nconfusion in communication`;
 
                     // console.log('changed current text');
                   }
@@ -229,7 +229,7 @@ function draw()
                     // console.log("second planet x: " + planets[j].x);
                     // console.log("second planet y: " + planets[j].y);
 
-                    currentText = `This is an opposition between ${planets[i].label} and ${planets[j].label}`;
+                    currentText = `This is an opposition between ${planets[i].label} and ${planets[j].label}\nAn opposition between these two suggests an inner need\n to rework social contracts and creative visions`;
 
                     // console.log('changed current text');
                   }
