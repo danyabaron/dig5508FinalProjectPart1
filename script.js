@@ -126,6 +126,9 @@ function draw()
                     // console.log("second planet y: " + planets[j].y);
 
                     currentText = `Conjunction between ${planets[i].label} and ${planets[j].label}`;
+                    // fill("white")
+                    textSize(19)
+                    text('A conjunction between ${planets[i].label} and ${planets[j].label} encourages harmonious communication with others', width/2-100, height-900);
 
                     // console.log('changed current text');
                   }
