@@ -125,7 +125,7 @@ function draw()
                     // console.log("second planet x: " + planets[j].x);
                     // console.log("second planet y: " + planets[j].y);
 
-                    currentText = `Conjunction between ${planets[i].label} and ${planets[j].label}\nA conjunction happpens when there are 0 degrees between 2 planets\nA conjunction is a unifying alignment that merges the planets' influence\nA conjunction between these two encourages harmonious communication with others`;
+                    currentText = `This is a conjunction between ${planets[i].label} and ${planets[j].label}\nA conjunction happpens when there are 0 degrees between 2 planets\nA conjunction is a unifying alignment that merges the planets' influence\nA conjunction between these two encourages harmonious communication with others`;
                     
                      
                     
@@ -158,7 +158,7 @@ function draw()
                     // console.log("second planet x: " + planets[j].x);
                     // console.log("second planet y: " + planets[j].y);
 
-                    currentText = `This is a sextile between ${planets[i].label} and ${planets[j].label}`;
+                    currentText = `This is a sextile between ${planets[i].label} and ${planets[j].label}\nA sextile happens when there is 60 degrees between two planets\nA sextile is a supportive aspect that signals comfort\nA sextile between these two suggests an opportunity for fresh ideas in creative process\nand cooperative energy in social networks`;
 
                     // console.log('changed current text');
                   }
@@ -205,7 +205,7 @@ function draw()
                     // console.log("second planet x: " + planets[j].x);
                     // console.log("second planet y: " + planets[j].y);
 
-                    currentText = `This is a trine between ${planets[i].label} and ${planets[j].label}\nA trine between these two suggests making adjustments\nin accomplishing your personal goals to lead you forward`;
+                    currentText = `This is a trine between ${planets[i].label} and ${planets[j].label}\nA trine happens when there is 120 degrees between two planets\nA trine usually brings positive influence to make a impactful change\nA trine between these two suggests making adjustments\nin accomplishing your personal goals to lead you forward`;
 
                     // console.log('changed current text');
                   }
@@ -229,7 +229,7 @@ function draw()
                     // console.log("second planet x: " + planets[j].x);
                     // console.log("second planet y: " + planets[j].y);
 
-                    currentText = `This is an opposition between ${planets[i].label} and ${planets[j].label}\nAn opposition between these two suggests an inner need\n to rework social contracts and creative visions`;
+                    currentText = `This is an opposition between ${planets[i].label} and ${planets[j].label}\n An opposition happens when there is 180 degrees between two planets\nAn opposition creates tension and room for growth\nAn opposition between these two suggests an inner need\n to rework social contracts and creative visions`;
 
                     // console.log('changed current text');
                   }
