@@ -125,7 +125,7 @@ function draw()
                     // console.log("second planet x: " + planets[j].x);
                     // console.log("second planet y: " + planets[j].y);
 
-                    currentText = `Conjunction between ${planets[i].label} and ${planets[j].label}\nA conjunction between these two encourages harmonious communication with others`;
+                    currentText = `Conjunction between ${planets[i].label} and ${planets[j].label}\nA conjunction happpens when there are 0 degrees between 2 planets\nA conjunction is a unifying alignment that merges the planets' influence\nA conjunction between these two encourages harmonious communication with others`;
                     
                      
                     
@@ -181,7 +181,7 @@ function draw()
                     // console.log("second planet x: " + planets[j].x);
                     // console.log("second planet y: " + planets[j].y);
 
-                    currentText = `This is a square between ${planets[i].label} and ${planets[j].label}\nA square between these two can lead to carelessness with words and\nconfusion in communication`;
+                    currentText = `This is a square between ${planets[i].label} and ${planets[j].label}\n A square happens where there is 90 degrees between two planets\n A square signals struggle or confusion\nA square between these two can lead to carelessness with words and\nconfusion in communication`;
 
                     // console.log('changed current text');
                   }
@@ -205,7 +205,7 @@ function draw()
                     // console.log("second planet x: " + planets[j].x);
                     // console.log("second planet y: " + planets[j].y);
 
-                    currentText = `This is a trine between ${planets[i].label} and ${planets[j].label}`;
+                    currentText = `This is a trine between ${planets[i].label} and ${planets[j].label}\nA trine between these two suggests making adjustments\nin accomplishing your personal goals to lead you forward`;
 
                     // console.log('changed current text');
                   }
