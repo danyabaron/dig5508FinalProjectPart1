@@ -2,8 +2,6 @@
 
 let smallStars = [];
 let bigStars = [];
-
-// let mercury, venus, earth, mars, jupiter, saturn;
 let planets = [];
 
 let isPaused = false;
@@ -34,7 +32,7 @@ function setup() {
         bigStars.push(new BigStar());
     }
 
-    //2
+ 
 
     planets.push(new Planet(20, 120, 1.2, 30, color('#626f96'), "Mercury"));
     planets.push(new Planet(30, 175, 0.4, 100, color('#de6840'), "Venus"));
@@ -103,7 +101,7 @@ function draw()
     for (let i = 0; i < planets.length - 1; i++) {
         for (let j = i + 1; j < planets.length; j++) {
 
-            // planets[i].drawLine = false;
+            ;
 
         
                 planets[i].drawLineTo(planets[j]); // Draw lines between planets
@@ -117,31 +115,15 @@ function draw()
                 if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
                 && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
                     
-                    // strokeWeight(6);
-                    // console.log("mouse x: " + mouseX);
-                    // console.log("mouse y: " + mouseY);
-                    // console.log("first planet x: " + planets[i].x);
-                    // console.log("first planet y: " + planets[i].y);
-                    // console.log("second planet x: " + planets[j].x);
-                    // console.log("second planet y: " + planets[j].y);
+              
 
                     currentText = `This is a conjunction between ${planets[i].label} and ${planets[j].label}\nA conjunction happpens when there are 0 degrees between 2 planets\nA conjunction is a unifying alignment that merges the planets' influence\nA conjunction between these two encourages harmonious communication with others`;
                     
                      
-                    
-                    // fill("white")
-                    // stroke('white');
-                    // textSize(19)
-                    // text('A conjunction between ${planets[i].label} and ${planets[j].label} encourages harmonious communication with others', width/2-100, height-900);
-
-                    // fill(currentFill);
-                    // fill(currentStroke);
-
-                    // console.log('changed current text');
                   }
                   else {
                     currentText ="";
-                    // console.log('mouse not over line');
+                    
                   }
 
             }
@@ -151,20 +133,15 @@ function draw()
                 if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
                 && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
                     
-                    // console.log("mouse x: " + mouseX);
-                    // console.log("mouse y: " + mouseY);
-                    // console.log("first planet x: " + planets[i].x);
-                    // console.log("first planet y: " + planets[i].y);
-                    // console.log("second planet x: " + planets[j].x);
-                    // console.log("second planet y: " + planets[j].y);
+                  
 
                     currentText = `This is a sextile between ${planets[i].label} and ${planets[j].label}\nA sextile happens when there is 60 degrees between two planets\nA sextile is a supportive aspect that signals comfort\nA sextile between these two suggests an opportunity for fresh ideas in creative process\nand cooperative energy in social networks`;
 
-                    // console.log('changed current text');
+                    
                   }
                   else {
                     currentText ="";
-                    // console.log('mouse not over line');
+                    
                   }
 
             }
@@ -174,21 +151,16 @@ function draw()
                 if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
                 && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
                     
-                    // console.log("mouse x: " + mouseX);
-                    // console.log("mouse y: " + mouseY);
-                    // console.log("first planet x: " + planets[i].x);
-                    // console.log("first planet y: " + planets[i].y);
-                    // console.log("second planet x: " + planets[j].x);
-                    // console.log("second planet y: " + planets[j].y);
+                
 
                     currentText = `This is a square between ${planets[i].label} and ${planets[j].label}\n A square happens where there is 90 degrees between two planets\n A square signals struggle or confusion\nA square between these two can lead to carelessness with words and\nconfusion in communication`;
 
-                    // console.log('changed current text');
+                    
                   }
 
                   else {
                     currentText ="";
-                    // console.log('mouse not over line');
+                    
                   }
 
             }
@@ -198,20 +170,15 @@ function draw()
                 if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
                 && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
                     
-                    // console.log("mouse x: " + mouseX);
-                    // console.log("mouse y: " + mouseY);
-                    // console.log("first planet x: " + planets[i].x);
-                    // console.log("first planet y: " + planets[i].y);
-                    // console.log("second planet x: " + planets[j].x);
-                    // console.log("second planet y: " + planets[j].y);
+                   
 
                     currentText = `This is a trine between ${planets[i].label} and ${planets[j].label}\nA trine happens when there is 120 degrees between two planets\nA trine usually brings positive influence to make a impactful change\nA trine between these two suggests making adjustments\nin accomplishing your personal goals to lead you forward`;
 
-                    // console.log('changed current text');
+                    
                   }
                   else {
                     currentText ="";
-                    // console.log('mouse not over line');
+                    
                   }
 
             }
@@ -222,20 +189,15 @@ function draw()
                 if (mouseX >= min(planets[i].x, planets[j].x) && mouseX <= max(planets[i].x, planets[j].x) 
                 && mouseY >= min(planets[i].y, planets[j].y) && mouseY <= max(planets[i].y, planets[j].y)) {
                     
-                    // console.log("mouse x: " + mouseX);
-                    // console.log("mouse y: " + mouseY);
-                    // console.log("first planet x: " + planets[i].x);
-                    // console.log("first planet y: " + planets[i].y);
-                    // console.log("second planet x: " + planets[j].x);
-                    // console.log("second planet y: " + planets[j].y);
+                   
 
                     currentText = `This is an opposition between ${planets[i].label} and ${planets[j].label}\n An opposition happens when there is 180 degrees between two planets\nAn opposition creates tension and room for growth\nAn opposition between these two suggests an inner need\n to rework social contracts and creative visions`;
 
-                    // console.log('changed current text');
+                   
                   }
                   else {
                     currentText ="";
-                    // console.log('mouse not over line');
+                   
                   }
 
             }
@@ -269,8 +231,7 @@ function keyPressed() {
 
 
         let mvAngleDifference;
-        // planets.drawLine = false;
-        // console.log('set drawline to false');
+        
 
         alignment = NONE;
 
@@ -291,11 +252,7 @@ function keyPressed() {
                     alignment = CONJUNCTION;                                      
                     console.log('conjunction');
                     console.log("pause boolean in conjunction " + isPaused);
-                    // if (isPaused) {
-                    // planets[i].drawLine = false; // Set drawLine property to false to clear line
-                    // console.log('cleared line');
-
-                    // }
+                   
                     
                 } else if (59 <= mvAngleDifference && mvAngleDifference <= 65) {
                     planets[i].drawLine = true; // Set drawLine property to true for sextile
@@ -321,14 +278,7 @@ function keyPressed() {
                 }
             }
         }
-        // Update currentText based on alignments
-        // if (alignments.length > 0) {
-        //     currentText = alignments.join('\n'); // Concatenate alignments into a string
-        //     console.log('concatenated string');
-        // } else {
-        //     currentText = "No significant aspect between planets";
-        // }
-
+       
     
 
 
@@ -381,11 +331,7 @@ class Planet {
         noStroke();
         ellipse(this.x, this.y, this.radius * 2);
 
-        // Display the label for the planet
-        // noStroke();
-        // fill('white');
-        // textSize(15);
-        // text(this.label, this.x - 20, this.y - 33);
+      
 
         if (this.label === "Mercury") {
             noStroke();
@@ -433,7 +379,7 @@ class Planet {
                 mouseY <= max(this.y, target.y))
         {
             lineWeight = 8;
-            // line(this.x, this.y, target.x, target.y);
+            
         }
 
         stroke('yellow');
@@ -441,10 +387,7 @@ class Planet {
         line(this.x, this.y, target.x, target.y);
     }
 
-    // if(!this.drawLine) {
-    //     noStroke();
-        
-    // }
+   
 }
 }
 
