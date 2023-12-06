@@ -36,7 +36,7 @@ function setup() {
 
     //2
 
-    planets.push(new Planet(20, 120, 0.8, 30, color('#626f96'), "Mercury"));
+    planets.push(new Planet(20, 120, 1.2, 30, color('#626f96'), "Mercury"));
     planets.push(new Planet(30, 175, 0.4, 100, color('#de6840'), "Venus"));
     // earth = new Planet(20, 230, 0.6, 190, color('green'));
     // planets.push(new Planet(30, 240, 1, 220, color('red'), "Mars"));
